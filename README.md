@@ -203,7 +203,7 @@
 ## 🎓 Profil
 
 ```
-📚  Licence Informatique de Gestion  (Bac +3)
+📚  Ingénieur d'Application en Informatique de Gestion
 🎂  47 ans  ·  Marié  ·  2 enfants (2017 & 2023)
 🗣️  Arabe (natif)  ·  Français (courant)  ·  Anglais (intermédiaire)
 📍  Bir El Djir, Oran 31000, Algérie
