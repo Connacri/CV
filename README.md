@@ -172,6 +172,7 @@
 |---------|-------|------------|
 | 🟢 **2013 → Présent** | Fondateur & Développeur Principal | **Forslog — Entreprise IT · Oran** |
 | 2008 → 2013 | Cadre Commercial | **Générale Assurance Méditerranéenne (GAM)** |
+| **2008 → Nov. 2011** | Spécialiste Web · CCTV IP · Contrôle d'Accès | **ECRN — Entreprise Militaire Construction & Réparation Navale** |
 | Jan → Août 2008 | Sales & Trade Marketing Representative | **British American Tobacco (BAT) — Région Ouest** |
 | Avr → Nov 2007 | Stagiaire GRH | **ECRN — Entreprise Militaire Construction & Réparation Navale** |
 | Juin 2004 → Nov 2006 | Superviseur / Data-Processor | **Group Five International — Hôpital Militaire Aïn El Baïda** |
