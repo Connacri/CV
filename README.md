@@ -159,7 +159,7 @@
 
 | Repo | Description | Stack |
 |------|-------------|-------|
-| [🌐 CV](https://github.com/Connacri/CV) | CV interactif multilingue FR/EN/AR | ![HTML](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5) |
+| [🌐 CV](https://github.com/Connacri/CV) | CV interactif multilingue FR/EN/ES/PT | ![HTML](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5) |
 | [🔒 Check-it-privacy](https://github.com/Connacri/Check-it-privacy) | Politique de confidentialité Check-it | ![HTML](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5) |
 | [📜 privacy.policy](https://github.com/Connacri/privacy.policy) | Politique de confidentialité apps | — |
 | [🙋 Connacri](https://github.com/Connacri/Connacri) | Profil GitHub README | — |
@@ -205,7 +205,7 @@
 ```
 📚  Ingénieur d'Application en Informatique de Gestion
 🎂  47 ans  ·  Marié  ·  2 enfants (2017 & 2023)
-🗣️  Arabe (natif)  ·  Français (courant)  ·  Anglais (intermédiaire)
+🗣️  Français (courant)  ·  Anglais (intermédiaire)  ·  Espagnol (notions)  ·  Portugais (notions)  ·  Espagnol (notions)  ·  Portugais (notions)
 📍  Bir El Djir, Oran 31000, Algérie
 ```
 
