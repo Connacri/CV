@@ -168,21 +168,34 @@
 
 ## 💼 Parcours Professionnel
 
+| Période | Poste | Entreprise |
+|---------|-------|------------|
+| 🟢 **2013 → Présent** | Fondateur & Développeur Principal | **Forslog — Entreprise IT · Oran** |
+| 2008 → 2013 | Cadre Commercial | **Générale Assurance Méditerranéenne (GAM)** |
+| Jan → Août 2008 | Sales & Trade Marketing Representative | **British American Tobacco (BAT) — Région Ouest** |
+| Avr → Nov 2007 | Stagiaire GRH | **ECRN — Entreprise Militaire Construction & Réparation Navale** |
+| Juin 2004 → Nov 2006 | Superviseur / Data-Processor | **Group Five International — Hôpital Militaire Aïn El Baïda** |
+| Jan 2001 → Avr 2004 | Responsable Service Technique & Commercial | **Entreprise Eternel Soft · Oran** |
+| 1999 → 2006 *(partiel)* | Secrétaire Général & Directeur Technique | **Association Sportive "El WIAM"** |
+
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│  🏢  Fondateur & Développeur Principal                           │
-│  📅  2013 → Présent  (12+ ans)  ·  Oran, Algérie                │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  🦋  Apps Flutter/Dart cross-platform (mobile & web)            │
-│  🖥️  Logiciels Windows sur mesure (C#, WPF, WinForms)           │
-│  📱  2 apps publiées sur Google Play Store                       │
-│  🔥  Intégration Firebase · Supabase · Firestore                │
-│  🌐  Réseaux locaux · Maintenance IT · Support technique         │
-│  👨‍🏫  Formation clients · Accompagnement digital PME             │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
+🎯  25+ ans d'expérience professionnelle cumulée
+🏢  12+ ans en entrepreneuriat IT (fondateur Forslog depuis 2013)
+📱  Expert Flutter/Dart — 2 apps Play Store publiées
+🖥️  Développeur Desktop Windows — C#, WPF, WinForms, .NET
+💼  Parcours riche : IT · Assurance · Trade Marketing · Défense · Santé
 ```
+
+---
+
+## 🎓 Formation & Certifications
+
+| Diplôme / Certificat | Établissement |
+|----------------------|--------------|
+| 🎓 **Ingénieur d'Application — DEUA Informatique de Gestion** | Université d'Oran IGMO |
+| 📜 **Certificat TM&D — Trade Marketing & Distribution** | DSI Direct Sales Institute |
+| 📜 **Certificat Communication & Négociation (PNL)** | Générale Assurance Méditerranéenne (GAM) |
+| 📗 **Baccalauréat Science Naturelle & Vie** | Algérie |
 
 ---
 
@@ -200,14 +213,16 @@
 
 ---
 
-## 🎓 Profil
+## 🧑 Profil
 
 ```
-📚  Ingénieur d'Application en Informatique de Gestion
-🎂  47 ans  ·  Marié  ·  2 enfants (2017 & 2023)
-🗣️  Français (courant)  ·  Anglais (intermédiaire)  ·  Espagnol (notions)  ·  Portugais (notions)  ·  Espagnol (notions)  ·  Portugais (notions)
+📅  Né le 20 Mars 1979 — Oran, Algérie
+💍  Marié  ·  2 enfants (2017 & 2023)
+🗣️  Français (courant)  ·  Anglais (intermédiaire)  ·  Espagnol (notions)  ·  Portugais (notions)
+🚗  Permis de conduire — Catégorie B (Année 2000)
 📍  Bir El Djir, Oran 31000, Algérie
 ```
+
 
 ---
 
