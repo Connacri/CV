@@ -33,9 +33,9 @@
 > *Entrepreneur IT algérien · Fondateur de ma société depuis **2013** · Expert Flutter/Dart, Desktop Windows et solutions métier sur mesure.*
 
 ```
-🏢  12+ ans d'expérience en développement logiciel & gestion d'entreprise IT
+🏢  Entrepreneur IT · Fondateur de Forslog depuis 2013
 🦋  Expert Flutter/Dart — Applications cross-platform modernes
-🖥️  Développeur Desktop Windows — C#, WPF, WinForms, .NET
+🖥️  Développement d'applications desktop Windows et solutions métier
 📱  Android Dev — Applications publiées sur Google Play Store
 🔥  Firebase · Supabase · Firestore Realtime Database
 📍  Bir El Djir, Oran, Algérie
@@ -52,15 +52,10 @@
 ![Play Store](https://img.shields.io/badge/Play%20Store-414141?style=for-the-badge&logo=google-play&logoColor=white)
 
 ### 💻 Desktop Windows
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
-![WPF](https://img.shields.io/badge/WPF-0078D4?style=for-the-badge&logo=windows&logoColor=white)
-![WinForms](https://img.shields.io/badge/WinForms-0078D4?style=for-the-badge&logo=windows&logoColor=white)
 
 ### 🔥 Backend & Cloud
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 ### 🌐 Web & Outils
@@ -180,10 +175,10 @@
 | 1999 → 2006 *(partiel)* | Secrétaire Général & Directeur Technique | **Association Sportive "El WIAM"** |
 
 ```
-🎯  25+ ans d'expérience professionnelle cumulée
-🏢  12+ ans en entrepreneuriat IT (fondateur Forslog depuis 2013)
+🎯  Vaste expérience professionnelle dans plusieurs domaines
+🏢  Entrepreneur IT · Fondateur de Forslog depuis 2013
 📱  Expert Flutter/Dart — 2 apps Play Store publiées
-🖥️  Développeur Desktop Windows — C#, WPF, WinForms, .NET
+🖥️  Développement d'applications desktop Windows et solutions métier
 💼  Parcours riche : IT · Assurance · Trade Marketing · Défense · Santé
 ```
 
@@ -193,7 +188,7 @@
 
 | Diplôme / Certificat | Établissement |
 |----------------------|--------------|
-| 🎓 **Ingénieur d'Application — DEUA Informatique de Gestion** | Université d'Oran IGMO |
+| 🎓 **Diplômé Universitaire — Ingénieur d'Application en Informatique de Gestion** | Université d'Oran IGMO |
 | 📜 **Certificat TM&D — Trade Marketing & Distribution** | DSI Direct Sales Institute |
 | 📜 **Certificat Communication & Négociation (PNL)** | Générale Assurance Méditerranéenne (GAM) |
 | 📗 **Baccalauréat Science Naturelle & Vie** | Algérie |
