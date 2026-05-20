@@ -3,576 +3,850 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CV — S.M. Ramzi Guedouar</title>
+<title>S.M. Ramzi Guedouar — Forslog SARL</title>
 <style>
-  /* ===== RESET & BASE ===== */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Segoe UI', Calibri, Arial, sans-serif;
-    background: #e9eef5;
-    color: #222;
-    min-height: 100vh;
-  }
+/* ===== FUTURISTIC IT THEME ===== */
+:root {
+  --bg:       #030812;
+  --bg2:      #070f1e;
+  --bg3:      #0d1f3c;
+  --cyan:     #00d4ff;
+  --purple:   #a855f7;
+  --green:    #22c55e;
+  --orange:   #f97316;
+  --text:     #e2e8f0;
+  --text2:    #94a3b8;
+  --border:   rgba(0,212,255,0.18);
+  --glow-c:   0 0 22px rgba(0,212,255,0.35);
+  --glow-p:   0 0 22px rgba(168,85,247,0.35);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Segoe UI',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);
+  background-size:40px 40px;
+}
 
-  /* ===== LANGUAGE SWITCHER BAR ===== */
-  .lang-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-    background: #0d2540;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  }
-  .lang-bar span {
-    color: #a8c8f0;
-    font-size: 0.78rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-right: 6px;
-  }
-  .lang-btn {
-    background: transparent;
-    border: 2px solid #2e6da4;
-    color: #a8c8f0;
-    border-radius: 20px;
-    padding: 5px 18px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s;
-    letter-spacing: 1px;
-  }
-  .lang-btn:hover { background: #2e6da4; color: #fff; }
-  .lang-btn.active { background: #2e6da4; color: #fff; border-color: #2e6da4; }
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:3px}
 
-  /* ===== PAGE WRAPPER ===== */
-  .page-wrap {
-    max-width: 960px;
-    margin: 68px auto 40px;
-    background: #fff;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-    border-radius: 4px;
-    overflow: hidden;
-  }
+/* ===== LANG BAR ===== */
+.lang-bar{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(3,8,18,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;justify-content:center;align-items:center;
+  gap:8px;padding:8px 20px;flex-wrap:wrap;
+}
+.lang-bar-label{
+  color:var(--cyan);font-size:0.72rem;letter-spacing:2px;
+  text-transform:uppercase;margin-right:4px;
+}
+.lang-btn{
+  background:transparent;
+  border:1px solid var(--border);
+  color:var(--text2);
+  border-radius:6px;padding:4px 14px;
+  font-size:0.80rem;font-weight:600;
+  cursor:pointer;transition:all 0.2s;
+  display:flex;align-items:center;gap:5px;
+  letter-spacing:0.5px;
+}
+.lang-btn:hover{
+  border-color:var(--cyan);color:var(--cyan);
+  box-shadow:var(--glow-c);background:rgba(0,212,255,0.08);
+}
+.lang-btn.active{
+  border-color:var(--cyan);color:var(--bg);
+  background:var(--cyan);box-shadow:var(--glow-c);
+}
 
-  /* ===== HEADER ===== */
-  .cv-header {
-    background: linear-gradient(135deg, #1a3a5c 60%, #2e6da4 100%);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    padding: 36px 44px;
-  }
-  .cv-header img {
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #a8c8f0;
-    flex-shrink: 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  }
-  .cv-header-info h1 {
-    font-size: 2.1rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-  }
-  .cv-subtitle {
-    color: #a8c8f0;
-    font-size: 0.98rem;
-    margin: 7px 0 12px;
-    font-style: italic;
-  }
-  .cv-contacts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
-    font-size: 0.83rem;
-    color: #d0e8ff;
-  }
+/* ===== PAGE WRAPPER ===== */
+.page-wrap{
+  max-width:980px;margin:58px auto 40px;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 0 60px rgba(0,212,255,0.08),0 20px 60px rgba(0,0,0,0.6);
+}
 
-  /* ===== BODY ===== */
-  .cv-body {
-    display: flex;
-  }
+/* ===== HEADER ===== */
+.cv-header{
+  background:linear-gradient(135deg,#070f1e 0%,#0d1f3c 60%,#0a1628 100%);
+  border-bottom:1px solid var(--border);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;gap:30px;padding:32px 42px;
+}
+.cv-header::before{
+  content:'';position:absolute;
+  top:-50%;left:-50%;width:200%;height:200%;
+  background:radial-gradient(ellipse at 30% 50%,rgba(0,212,255,0.06) 0%,transparent 60%),
+             radial-gradient(ellipse at 70% 50%,rgba(168,85,247,0.04) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cv-header::after{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),var(--purple),var(--cyan),transparent);
+}
+.photo-wrap{
+  position:relative;flex-shrink:0;
+  width:118px;height:118px;
+}
+.photo-wrap::before{
+  content:'';position:absolute;inset:-3px;border-radius:50%;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
+  animation:spin 4s linear infinite;
+}
+.photo-wrap::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  background:linear-gradient(135deg,transparent,rgba(0,212,255,0.1));
+  animation:spin 4s linear infinite reverse;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.cv-header img{
+  position:relative;z-index:1;
+  width:118px;height:118px;border-radius:50%;
+  object-fit:cover;object-position:center top;
+  border:3px solid var(--bg2);
+}
+.cv-header-info{position:relative;z-index:1}
+.cv-header-info h1{
+  font-size:1.95rem;font-weight:800;
+  letter-spacing:3px;
+  background:linear-gradient(90deg,var(--text),var(--cyan));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.cv-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);
+  border-radius:20px;padding:3px 10px;
+  font-size:0.70rem;color:var(--cyan);font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;margin:8px 0 10px;
+}
+.cv-subtitle{
+  color:var(--text2);font-size:0.88rem;
+  margin-bottom:10px;font-style:italic;
+  border-left:2px solid var(--cyan);padding-left:10px;
+}
+.cv-contacts{
+  display:flex;flex-wrap:wrap;gap:5px 14px;
+  font-size:0.78rem;color:var(--text2);
+}
+.cv-contacts a{color:var(--cyan);text-decoration:none}
+.cv-contacts a:hover{text-decoration:underline}
 
-  /* ===== LEFT SIDEBAR ===== */
-  .cv-left {
-    width: 280px;
-    min-width: 280px;
-    background: #eef4fb;
-    padding: 32px 24px;
-    border-right: 1px solid #dce8f5;
-  }
+/* ===== BODY ===== */
+.cv-body{display:flex}
 
-  /* ===== RIGHT MAIN ===== */
-  .cv-right {
-    flex: 1;
-    padding: 32px 36px;
-  }
+/* ===== LEFT SIDEBAR ===== */
+.cv-left{
+  width:296px;min-width:296px;
+  background:rgba(7,15,30,0.8);
+  padding:26px 20px;
+  border-right:1px solid var(--border);
+}
 
-  /* ===== SECTION TITLES ===== */
-  .sec-title {
-    font-size: 0.72rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    color: #1a3a5c;
-    border-bottom: 3px solid #2e6da4;
-    padding-bottom: 5px;
-    margin-bottom: 16px;
-  }
-  .section { margin-bottom: 28px; }
+/* ===== RIGHT MAIN ===== */
+.cv-right{flex:1;padding:26px 32px}
 
-  /* ===== SKILLS ===== */
-  .skill-cat {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #2e6da4;
-    margin: 12px 0 6px;
-  }
-  .skill-chips { display: flex; flex-wrap: wrap; gap: 4px; }
-  .chip {
-    background: #d0e4f7;
-    color: #1a3a5c;
-    border-radius: 12px;
-    padding: 2px 10px;
-    font-size: 0.74rem;
-    font-weight: 600;
-  }
+/* ===== SECTION TITLES ===== */
+.sec-title{
+  font-size:0.65rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:3px;
+  color:var(--cyan);
+  border-bottom:1px solid var(--border);
+  padding-bottom:6px;margin-bottom:14px;
+  display:flex;align-items:center;gap:6px;
+}
+.sec-title::before{
+  content:'▸';color:var(--cyan);font-size:0.75rem;
+}
+.section{margin-bottom:22px}
 
-  /* ===== LANGUAGES ===== */
-  .lang-item { margin-bottom: 12px; }
-  .lang-row { display: flex; justify-content: space-between; margin-bottom: 4px; }
-  .lang-name { font-weight: 700; font-size: 0.84rem; color: #1a3a5c; }
-  .lang-level { font-size: 0.75rem; color: #555; }
-  .lang-bar-bg { height: 5px; background: #cde0f5; border-radius: 3px; }
-  .lang-bar-fill { height: 5px; border-radius: 3px; background: linear-gradient(90deg, #2e6da4, #5a9fd4); }
+/* ===== CHIPS ===== */
+.skill-cat{
+  font-size:0.72rem;font-weight:700;
+  color:var(--cyan);margin:10px 0 5px;
+  letter-spacing:1px;text-transform:uppercase;
+}
+.skill-chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{
+  border-radius:4px;padding:2px 8px;
+  font-size:0.68rem;font-weight:600;
+  border:1px solid;
+}
+.chip-default{
+  background:rgba(0,212,255,0.07);
+  border-color:rgba(0,212,255,0.25);
+  color:var(--cyan);
+}
+.chip-sec{
+  background:rgba(249,115,22,0.08);
+  border-color:rgba(249,115,22,0.3);
+  color:#fb923c;
+}
+.chip-green{
+  background:rgba(34,197,94,0.07);
+  border-color:rgba(34,197,94,0.25);
+  color:var(--green);
+}
+.chip-purple{
+  background:rgba(168,85,247,0.08);
+  border-color:rgba(168,85,247,0.3);
+  color:#c084fc;
+}
 
-  /* ===== CONTACT ===== */
-  .contact-item {
-    font-size: 0.8rem;
-    color: #333;
-    margin-bottom: 7px;
-    line-height: 1.5;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-  }
-  .contact-item a { color: #2e6da4; text-decoration: none; }
-  .contact-item a:hover { text-decoration: underline; }
+/* ===== AGRÉMENT BOX ===== */
+.agrement-box{
+  background:linear-gradient(135deg,rgba(3,8,18,0.95) 0%,rgba(13,31,60,0.8) 100%);
+  border:1px solid rgba(0,212,255,0.2);
+  border-radius:8px;padding:12px 14px;margin-top:8px;
+  box-shadow:var(--glow-c);
+}
+.agrement-box-title{
+  color:var(--cyan);font-size:0.66rem;font-weight:800;
+  text-transform:uppercase;letter-spacing:1.5px;
+  margin-bottom:6px;display:flex;align-items:center;gap:5px;
+}
+.agrement-item{
+  font-size:0.68rem;color:var(--text2);
+  line-height:1.55;margin-bottom:3px;
+  padding-left:12px;position:relative;
+}
+.agrement-item::before{content:"▸";color:var(--cyan);position:absolute;left:0;font-size:0.65rem}
 
-  /* ===== SUMMARY ===== */
-  .summary-text {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: #333;
-  }
+/* ===== LANGUAGES ===== */
+.lang-item{margin-bottom:12px}
+.lang-row{display:flex;justify-content:space-between;margin-bottom:4px}
+.lang-name{font-weight:700;font-size:0.82rem;color:var(--text)}
+.lang-level{font-size:0.70rem;color:var(--text2)}
+.lang-bar-bg{
+  height:4px;background:rgba(255,255,255,0.08);
+  border-radius:2px;overflow:hidden;
+}
+.lang-bar-fill{
+  height:4px;border-radius:2px;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  box-shadow:0 0 8px rgba(0,212,255,0.5);
+}
 
-  /* ===== EXPERIENCE ===== */
-  .job { margin-bottom: 22px; }
-  .job-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
-  .job-title { font-weight: 700; font-size: 0.97rem; color: #1a3a5c; }
-  .job-company { font-size: 0.82rem; color: #2e6da4; font-style: italic; }
-  .job-period { font-size: 0.77rem; color: #666; white-space: nowrap; margin-left: 12px; }
-  .job ul { margin: 8px 0 0 18px; font-size: 0.83rem; line-height: 1.7; color: #333; }
-  .job ul li { margin-bottom: 3px; }
-  .job-stack { font-size: 0.77rem; color: #2e6da4; font-style: italic; margin-top: 7px; }
+/* ===== INFO ITEMS ===== */
+.info-item{
+  font-size:0.78rem;color:var(--text2);
+  line-height:1.65;margin-bottom:5px;
+  padding-left:14px;position:relative;
+}
+.info-item::before{content:"▸";color:var(--cyan);position:absolute;left:0;font-size:0.70rem}
 
-  /* ===== PROJECTS ===== */
-  .project { margin-bottom: 14px; }
-  .project-title { font-weight: 700; font-size: 0.9rem; color: #1a3a5c; }
-  .project-desc { font-size: 0.82rem; color: #333; margin-top: 3px; line-height: 1.6; }
+/* ===== PROFILE TEXT ===== */
+.summary-text{
+  font-size:0.85rem;line-height:1.75;color:var(--text2);
+  border-left:2px solid var(--purple);padding-left:14px;
+}
 
-  /* ===== EDUCATION ===== */
-  .edu-degree { font-weight: 700; font-size: 0.92rem; color: #1a3a5c; }
-  .edu-school { font-size: 0.82rem; color: #2e6da4; font-style: italic; margin-top: 2px; }
+/* ===== JOBS ===== */
+.job{
+  margin-bottom:18px;
+  background:rgba(13,31,60,0.4);
+  border:1px solid var(--border);
+  border-radius:8px;padding:14px 16px;
+  transition:all 0.2s;
+}
+.job:hover{
+  border-color:rgba(0,212,255,0.35);
+  box-shadow:var(--glow-c);
+}
+.job-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:5px}
+.job-title{font-weight:700;font-size:0.93rem;color:var(--text)}
+.job-company{font-size:0.78rem;color:var(--cyan);font-style:italic;margin-top:2px}
+.job-period{
+  font-size:0.70rem;white-space:nowrap;margin-left:10px;
+  background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.25);
+  border-radius:20px;padding:2px 10px;color:var(--cyan);font-weight:600;
+}
+.job ul{margin:8px 0 0 16px;font-size:0.80rem;line-height:1.75;color:var(--text2)}
+.job ul li{margin-bottom:3px}
+.job-stack{
+  font-size:0.70rem;color:var(--purple);
+  font-style:italic;margin-top:8px;
+  background:rgba(168,85,247,0.06);
+  border:1px solid rgba(168,85,247,0.2);
+  border-radius:4px;padding:4px 8px;
+}
 
-  /* ===== INFO ITEMS ===== */
-  .info-item {
-    font-size: 0.82rem;
-    color: #333;
-    line-height: 1.65;
-    margin-bottom: 6px;
-    padding-left: 14px;
-    position: relative;
-  }
-  .info-item::before {
-    content: "▪";
-    color: #2e6da4;
-    position: absolute;
-    left: 0;
-  }
+/* ===== PROJECTS ===== */
+.project{
+  margin-bottom:12px;
+  background:rgba(13,31,60,0.3);
+  border:1px solid var(--border);
+  border-radius:8px;padding:12px 14px;
+  transition:all 0.2s;
+}
+.project:hover{border-color:rgba(0,212,255,0.35);box-shadow:var(--glow-c)}
+.project-title{font-weight:700;font-size:0.86rem;color:var(--text)}
+.project-title a{color:var(--cyan);text-decoration:none}
+.project-title a:hover{text-decoration:underline}
+.project-desc{font-size:0.78rem;color:var(--text2);margin-top:4px;line-height:1.6}
 
-  /* ===== FOOTER ===== */
-  .cv-footer {
-    text-align: center;
-    font-size: 0.75rem;
-    color: #999;
-    padding: 14px;
-    border-top: 1px solid #e5e5e5;
-    background: #fafafa;
-  }
+/* ===== EDUCATION ===== */
+.edu-degree{font-weight:700;font-size:0.88rem;color:var(--text)}
+.edu-school{font-size:0.78rem;color:var(--cyan);font-style:italic;margin-top:2px}
 
-  /* ===== PRINT ===== */
-  @media print {
-    body { background: #fff; }
-    .lang-bar { display: none; }
-    .page-wrap { margin: 0; box-shadow: none; border-radius: 0; }
-  }
+/* ===== FOOTER ===== */
+.cv-footer{
+  text-align:center;font-size:0.70rem;color:var(--text2);
+  padding:14px;border-top:1px solid var(--border);
+  background:rgba(3,8,18,0.8);
+  letter-spacing:0.5px;
+}
+.cv-footer span{color:var(--cyan)}
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 700px) {
-    .cv-header { flex-direction: column; align-items: flex-start; padding: 24px 20px; gap: 16px; }
-    .cv-body { flex-direction: column; }
-    .cv-left { width: 100%; min-width: 0; border-right: none; border-bottom: 1px solid #dce8f5; }
-    .cv-right { padding: 24px 20px; }
-  }
+/* ===== PRINT ===== */
+@media print{
+  body{background:#fff!important;color:#111!important;background-image:none!important}
+  .lang-bar{display:none}
+  .page-wrap{margin:0;box-shadow:none;border-radius:0;border:none;background:#fff}
+  .cv-header{background:#1a3a5c!important;-webkit-print-color-adjust:exact}
+  .cv-left{background:#f0f4f8!important;-webkit-print-color-adjust:exact}
+  .job,.project{background:#f8fafc!important;border-color:#ddd!important}
+  .summary-text,.job ul li,.project-desc,.info-item,.agrement-item{color:#333!important}
+  .lang-bar-fill{background:#2e6da4!important;-webkit-print-color-adjust:exact}
+  * {box-shadow:none!important}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:700px){
+  .cv-header{flex-direction:column;align-items:flex-start;padding:22px 18px;gap:16px}
+  .cv-body{flex-direction:column}
+  .cv-left{width:100%;min-width:0;border-right:none;border-bottom:1px solid var(--border)}
+  .cv-right{padding:22px 18px}
+}
 </style>
 </head>
 <body>
 
-<!-- ===== LANGUAGE SWITCHER ===== -->
+<!-- ===== LANG BAR ===== -->
 <div class="lang-bar">
-  <span>🌐 Langue / Language / Idioma :</span>
+  <span class="lang-bar-label">⚡ Lang:</span>
   <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">🇫🇷 FR</button>
   <button class="lang-btn" onclick="setLang('en')" id="btn-en">🇬🇧 EN</button>
   <button class="lang-btn" onclick="setLang('es')" id="btn-es">🇪🇸 ES</button>
   <button class="lang-btn" onclick="setLang('pt')" id="btn-pt">🇵🇹 PT</button>
 </div>
 
-<!-- ===== CV PAGE ===== -->
 <div class="page-wrap">
 
   <!-- HEADER -->
   <div class="cv-header">
-    <img src="data:image/jpeg;base64,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" alt="S.M.Ramzi Guedouar" style="width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid #a8c8f0;flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,0.25);" />
+    <div class="photo-wrap">
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoKCgoKCgsMDAsPEA4QDxYUExMUFiIYGhgaGCIzICUgICUgMy03LCksNy1RQDg4QFFeT0pPXnFlZXGPiI+7u/sBCgoKCgoKCwwMCw8QDhAPFhQTExQWIhgaGBoYIjMgJSAgJSAzLTcsKSw3LVFAODhAUV5PSk9ecWVlcY+Ij7u7+//CABEIAVABUAMBIgACEQEDEQH/xAAvAAEAAwEBAAAAAAAAAAAAAAAAAQIDBAUBAQEBAQEAAAAAAAAAAAAAAAABAgME/9oADAMBAAIQAxAAAALYeHsAAAAAAAAAAAAAAAAFQmAACwgAAAACEiEiCCWVNOiMbaas7FkTkGQAAAAUBCRIgAAAAAAry6a4Vv1TovS60RNhSLipGEk80AAAAACpEAAAAAKW8/Sc4d8675bTV7xaJtEiZERaCsWgpF8stFNOYIhMAAAVKUQkQkQmAAQcnNV6MLU01dd8Nc66L56wtE2aImxEjOt65taWrLy9nJ0ZlxzoCJEAAsAABEiEwMduPU4kx6czvz9EttKznW+2O0WmJsmaC81lIrMS0rMS0prgnUONAAAhIkAAACJgcHf5+5zxMd8xvhsbXaZ3bTOToZ6JW1LGkQsisxm0IWvPtzp3DhQAAAJAAAAiYHn+hx7nE25vRi+3LazqnimXq04h6fR5XZnW9NfKOnLkrvPpbeVePWjy4l9Lnp0ZvSmPPoAAACUogAUAiYMM8ObvnXG995wTXeUJJmLLT0eP1Ma5/P8Ad8UziW8LQNIrvm5ehPRnacteOiWEJEAAsIARIgUiYOHl9DzfRm8xOplTXLeAExY37OTt59enyvV5TyV6dOUzFonr5vSzu18dc6tJxoZAQkQCwgABExQFfI9jy+syvlp2zSZko6t5eO/dxmHp+d3y9NLVjh5/WivK07rJFr55vN3+d6GlR56EAAQmCwgABEqgDl6s9PIWz9PPXTHSXp6uDszqfM7+OubfHTeOuI6876KWRaiIjDXiNOzm6UDz6AAAAkQAAAiYoDPy/Y8zrnk1yt3x17c+eN75Z11mdMtqjXKZejXiiPUtxdmdc/F0c+s9vTjtw0GKAAABIgAAAKgDj7KaeJNqerlpSbGc9MSt7azpVrMcvN6lE4ezlmysV6U6rHm2EAAAASIAACgIAiR5nJ3cfq510z23LRNs6ytSLNNcu/NmGE1ivlrE+jxehzt4mOGwAAAAJEAABQEARPFWGJ6cZ61nWdpqhEVXfXCV3z1zSuN+kvu5ca7I0z40M0AAACwiABQAgAz8rq4vRhNLdJN85jVS6Mta1Nq6F6ztmumLZ04e/lXsjHqYyHn6AAAAWEQmAAKQ5q6ebjdczh0U6457VvUSEytLWZ1I3tfOlkxa1ZWcdszD0vJ9fXKlNZzedtny3UY0ABYRACMdTbHO/XGGfRTpnnWgvd0HkXXuq2m0tGtBpGy30ppmrBKJJy25Uw9jy/U3zTEoiZKZ7xLzx0U5byTHPdoiLJpa/XnhXTTeaNcjKmuZz10rbr28nVJ5tfRxuuaNcs7ujYy2oXa2OkaTFiJmxWnXz7xyenw9zJEpMxJEhAFLjmmbQytci0qpS9Yzw6OcrnYtMbddnXfm66y5fQlrx+n0KZ1xU785eS/Rcw121sx1tGsxwdnAjPr8rOfbnz++20xIAhJEh//EAAL/2gAMAwEAAgADAAAAIffffff/AP8A/wD/AP8A/wD7wwwdffQQQQQQc8//ANNnH/8A/vPBBxNNNNJBDE0VvhZfz/8A/wC8sH33330lb3YEWZClLkPf/wDNxxx19jL8Ho0aKJPnDDT/APwQQUdbUAZ8wIo+71wwww8zTSQVUgr3vGh0mzDn/wAsMP3321U8k1ZuetVVgjf/AP8Ay8//AH1Vk+hoivp+WuD3PP8A/DDT99thhChnE1T8NKDDz/DDDVp8QwWN+LeXTgpDDD3PLDR9AnPPP44QVoHPLDDD/wDyw1aQ9799FO0KXf8A8MMP/wDvDB9Ayx/MCMYCc/8A/wA8P/8A/JB9TJI4ML0//X//AP8A8P8A/wD+QfQqrnytMUBlv/8A/wDLD/8AfRabLLi1Df19sP8A/wD/AKw9/wClRgxunCngcwAu7f8A7jD/AN4Si/sql0AtSdaQklECEFeZlmH6TrZG9cLIHCounXyoLkitTbBp6/hmrzKgmov/xAAC/9oADAMBAAIAAwAAABA/75//AN9NdtDDDDT/ADwNTQAgggggscestCDDww087CMMMsstrgDcjuAKAMvLjktiDDDAgtiPB56vHwQcAtrisMMMNrjP73u2RhN1qTikvjjHCEtl9DqMO9c1HgPvigssMNLHv/45g26PZqSIAtrijDAEPsDLwk9dWCw1tjCANsvvCPqi625FntBzndMMLAggkvFl0TTRoAv72GbyAMLPjglBq/OqIUw8ThtFvCANMtrmKiXpZ9N+ZTPwcNPLACgtrlDoYHnUm8T3riAPPKPgkviKiIt8zqyhQFbAAMPPvitCKuHpDgImsF1PDAAPPvqhKKNmlK+2eDgXfOAANAvrALPtXrpi1LvKGHIAAFAtulHuNfBW4c1f9Y3iiBHAvrRwx84IMAHRGI9QUUa/mm9xC3QzQDyLEAlcm58zSKE0Clznvy1qNiLP+tCwy4//xAAtEQACAgEDAgUEAQUBAAAAAAABAgADEQQhMRASEzAyQVEFICJhcTNAQnKBYv/aAAgBAgEBPwD+9AJOwiaWxudoNGPdodJ8PHpsTkbf2FVD2nbj5lVCVDiZhPW2gNuuxhBU4IwfN09BubJ9I5ldYQDAjQnpjrZStgxwfYxlKEqRgjyxKqRVWie+Mn+TDtGmIAJtiELiMOmtTauwe+x/55elTv1FS/8AqckyziEz36d5ndtGPS8d2mf9EHy/p4zqk/gweoyz0zE7YMRQNoQMRk6OM6a7/Xy9AwTUoScDBlTJd3Mh2BxDVnkzwVE8JW4jUurDYmLU5PEFW28KJ+4dOr8PNQBRS6scllOPLo0VD1Vtv3EAxStLdqLhfiDcA9CTniXuTgTTtyvQ4hwn5fEv7NQm/OZqalqK9vv5Whbv06jO6kiH17xDlR0JAEs3J/ZlbdjiA5hlz/iYPQP5mrbutI9lGPK+mMBY6k8rHXYN8QNDew94HZ2GTLdyDiNjIwYljDaNc2IxJMYdqoJYc2Oflj5WncV3Ix4zBhlIhBAj7GVEA7xgpXeFcZEI+ORGOZWvcwmpcIrN8DzPplreN2FiR27COoIgQs36i1ARsDEPaTzOwHiOva0pGFmssZr3GdgdvM09nhWo3wYCGUEHkQDtnin4hfu5EJAi3ENjG0cdzgRmFaFjwBHYu7Mfc+YJo3zTX/qI0MGCJYQOIqbzG+Z9QfFJUebRSbrAg/7K0FYCjhZ3AjpiFcwDEZwgn9Rj3DOQZqKTRYV9uQfM+n0eGuSPyPMYfkemYDCQI1gHEYk7mIcOJq6PGq29S8eVVTZacIpMq0HhlWdskewlWxEfmZhhYiFiYenuJ7t/Mt0VN2Tjtb5Eu0N1W4HeP191Wntu9K7fMp+n1rg2HuPx7RQqgAAAQwciO0LQHMYwmZ6KMmDlutumqu9ajPzLvprDets/ox63rOHUgynSW3b47V+TKdDTXuR3H5MA6mCOpO4gmcGHeHoBmV09o7m5nz9rojjDKCIB9g56EgCIe5Y1atvwY1DexE8Kwf4zwbD/AIxdMx9RAiVInA3jnae8B+3/xAArEQACAgECBAUEAwEAAAAAAAABAgARAyExEBIiMAQTMkFRIEBCYTNxgVL/2gAIAQMBAT8A++v7MkCbwD7Jmr+5dxeNiA8CYDfcL8xLRBcWGEzW4CbgPBNGZf8AR28hpGP6mwExbwRuHJCouKOB9a9vN/GZ7CY/VLl3CCIxIJAmtwGXcY9advKCUMcnHQYa1BmK7Cee59oM5XcQZsbLvDmQAkmHPZ0EGVvgQeIK7pFfzSCBVdvJkZSa1EKHIlseqEUa4ACt54dAAWmdRo1a7cBAOchfmY8Zxmr0rt5dCTB6I4pjwAJNCYhS/wBCZE50IhBBowTCtuD8Q+o/128w6YrakTluDw6neeWqKeUTFopFwX7iOmNtSIMOMe0UVF6ix/zttsY9qwNRTrFNiZAeTSIzh9DA4NGA6m9jAKjNyqZiGnc8QoKExGozzAiD5hzExQzXQgDgbGeYRvAbAMynWYxSL3HXmUiHpaHqqLiUEWYvIg0YTnJmRFeL0rD1NUAoAd3OvUTF3imxUNgzEDuYz0IW0qYF/I912CKTGPMLPvKIMupzQPQjPcVS5jisXT7TFkGRAff37md7inpE3hEqAExcZO8UAaCMLUiYsnlZSD6T2mdV3MbPYIAjm4u3AQLcCgQCVXDN6pj8RkTS7HwZj8TjffpP7+psiJuZk8UdlELsxsmAwnqEAgWFYo+nNuOKZcmP0tMfjAdHFfsRXVxakGPmRNzZ+BMninbQaQsfc2eIjbzE42MIqAWIBBLh0mTLfSu0yb/SGKmwSDLm3EbwGhcHUeCZXUVuIviE9wRBmxH8oc+L/qP4hfxEfIz7mCMx5rg1+n//xAAwEAACAQIEBQMDBAMBAQAAAAAAAQIDERASITEEIDJAQRMiUTBhcTNCUFIUI4FgYv/aAAgBAQABPwL/ANTdF/4VtIdT4MzeFi38JKr8F74JFsbFv4BtR3J1G8EhIX8JKSgrslNyd3hEX1E/D37luxOfqO/jGIhfTmvK3RCedX7jiZ/sXIhC5rFuVP06tvD7iUs82+RERfSeFdaJ/BB5op9tWllpyFisIkRcly/I8Jq8WcP0W+H23Fv2JfcWMMEIX0XhLYoby7bi/wBosYYoWHgQlzz2KHW+24vqiLGAkWxvoJ6EGXMxmMyL3HhPpKH6nbcX1RFipJCqfc9U9V/Iqp6ntIPQWg5kqj+T1ZfJnv5IyM1/OFTpZR/UXbcVByyWJUVCDd7sWaRlbdhwaV3hYt/9GZojUi/NiHEU46NjlBwzKSJ17v2ocpPzglE/EmXn/dnqVb9bJNpL/dCd/BSglK/a1K6p6bsdeMoXW68EqjqabIasXsN3xWuFtSjSdtyvSkle9y1uS5ckRTSzFB5te14n9RjRDCfU+S5cgrlPYms0GiaalzUVmmkTprIylFQghzcp6LTtOLXS8I+cJ781PpKTPBxMLTvy2OGj7myfSyGqRbtOIjmp/gZEZbNp55Yq4vCKSw4iGaH4JRt+MUIpQyQ+5UejKa9vbT0m19y9meMH7tzKjJ9yNEmsqIXuQLDJ03G9thwX9TJH7kKKl8lOjCHjUZUetiK2/HbV4tVJYRwUSNMVJGWxX1dhOzISVjOrFyx6cWeghQthIXuqIv23ErRMZHCJFiJuyJy9xdkKpFzn0ip1VPquKOh0vkqysigvci9+2qxzwaGsUR3ETdycRohFeSFQhUFK49RMY9CrK5w+77iVKEt0Vo5ZtYJlMlPLoZyUsPBBmcjV0FVsKV8KrsjdlGOnc8UvdfBEHZDle5mL4WeUjCQ0bIUilPVYVXfCivb3PFR9t8W9MLMSfwRpTfgjTqo9ObHw7/sOhPwydKcNynuiUtCTuxK7IKy7mazRaJqzaxVi2gpWFNHrxFXgerEzXKyvAo2zFSQyjHu+IX+x4wHIZcUhSKd5ESpLQjdSJakNyktO74n9T/hIQtkbItoPCMblNK1iehUbLXsz9xTjeRHbum7K7Ks/Ud8Y7ai1JaIWoynuXsSHsbI8lKnlRGXuyd1xNT9qFs8LHgjtY3/4X1L6iYnc0yj+DxYpUra+cJyy1oMeqv3E5ZY3Jsjjc3sfJ98ER0JN6H4IU/IsOJ0cWUXmpofb1Z5n9iRHlzGZFhWR+EZZS3IwsLHiFeDODlemNdtWqq1osZMXPlIwFEtgsavQzgXvhluWfY3sT4hLp1JTnPdiwqx0FzxEWwXJV6GcF1vkcTL9VtLclW/qSzS3LFsI7nER9nJYtjEXPW6WcJ1sfLYyfRbSHUfgs5bmWw0NHl4U9ziI3pPltgkJC5678HDK0x89hwLPkcki8mZS3wKI8GhbYUx6wKlLLqthFsENCELnlDKsz3OH62P6NhxLmvkUTY6hRweE9IstZLCCFKO10WJUPMSwyJYtbBCFikRhbVlfY4aO7H9O1i19zY6hLB4MrdJLCdRxWVblPSV2Q96uWJU1IqcPPwRTREaLYoSFTYopDOIZNZKG9mUeJaeWf07YbiWLxrbx/JPcWiuOPkoWtaxTeSbiXLYZYvdHow8aDo/c/wAeXyj/AB5fKP8AH+ZCpRRtjJk9aiJ0/URUi4uxw1b9kvpf/8QAKxABAAIBAwMEAQMFAQAAAAAAAQARIRAxQUBRYSBxgZGhMFCxYMHR4fHw/9oACAEBAAE/If6osOZ5pTv+y7qzso86AsNAlsv9hqx95dQF0CAlfsQZamF2O03l2gIECVKlRImg9W4h9SCXBBAgQh6UiRLl64OpAFdiL2TYiwnHSJUISpUqVE0YyexQvyuo2U33l4CcwnGcdAQhAiaGEjGM/wDCb6daLnuPFhvA20uOGgwZctixjqejup5WOmuXipt0N4bJUUWogykBLj6NQiy6Ye8o2a7JvBn1Nw1XVux0fz0zyZs1WIQNL0rJmWhREjGOizj+vpvxpsjob15iWjpWOBUKwESRhSMNN6fw9N+JHiMCE4YBKuGFscbERd8JuyqZclkB8kwF2SmFJ86LhdnpkaM7Sx8D4g5PzUKZlmFntzKgO88BBeQYJufZ2+4ncs8RfX1cdPyTdo92eVA/2Z2PvlBEpT9xVDMqJdulawYf34CL/RJf8QSscxFa26jZGzEEw0OHxM5RLbt/QMhaZkxBni5/GpLeTpBVnMohyzHOYK9z0EZRk1tHQgN8kZDrehLUgvZmKeJRqBz36T+IhnDDSIzm7npuYKXGlu0fQQj2kR/RPZglTpHat8osxt/Gnjeybb+hfZFiFZOJkKhKvLZ9AOA3mOd2XQmBnjpUuHQhc6F5XvzPMzL/AEl+8OslwZiEtUFkTotcbk5bPZ/zpVCmMie46UTFMHd6X72i8xWVEzLpZpgGICBKOi6tyq7xDO1jZD0rEv4TBBfTF7+oAuKmO+jZjslxGbMSZUVBH8oGtWlVXeC0xqMuXEtbxcVTHTd0uIpdzZl7R2Rw8TMgzJN9GDGJRuweUAbNQqS18ynwRbenTvPCO2vEGYtGIImWTLBrDtHqiCHxAyvJMCFsjtFgPLvCbXtjE26ig92jg3RWnaVBlFg5QlyagXBKDO9xHPvFIh9MXEyiBSd5Qept7xGHE2czWhajaRBOKgfKB4ncCO5PeKwn5JSriA6EBh1WCucOhknB5iYdUw9YgJuxHEG2hMWg+GcfeLBUFSyV1X87pc3W7Sxmy4O5Rv3m5A2Jcq2ZOSKGqagsXtKL9Xh7oFSnMzDiIE8sYBvEpNIcwuPeYWN52y9pffHkar1QIlBNtUGCOSJUQQ2l2ipIIFHEzDC6+8Sm/wD2Y5ZnZiXgZWUK8wsnJZERrqeW9479yXUbQvCL+zN2YFaW+UoGpe+YI82V2e3zG6blYYvG0z1DQOovuXEVVjw6g7QKfylMYuHDcrnOJ+SKOHmLmjnvNpbwURl43wuCnp76tm3qhhSp4NA3qqDQUMIhwKhHRWK7S7ptxi71NkFekSpUFPDCIQHoH65sfMd4iEuhQLWiYoW78Rz/AIaAuVX1VKYQhUEO2ivS/Biw+YwlQGKP1QbVTgHyyxaWMOUIbEqkgSvQhqmhL0Iql+fOGpmVEseyIn6G6sdtli0sKpY6W/0SocJ8CgQJUDQmdYFcQ0PRhpzMNzz6BrUdAl6Q4OI13mTWzvDCHUG7uypvuG32iKrL8Qas9M6FBhqEdpaey8TJvOo9dILEnmNt1HaXZcEaEbXiUETSkyfiYPxOYEGDu7XMVEjHZ7TZMWOZkZFxPoAiOAh95HlM3k/UAz5g1cLSZXiUkrQlwZmAO6Tj7ac6W/iKnNmIGMJ497kBdLPEUpIMaeECEMRit8QnBNkEJ8sMQYljzBvb9IjYjalHoM5m1i0BTlxH3bysLcQBu8C/40VHa7OwYt2hgEg/5J39gGw1pJhfMKl4itSmk9n9L//EACkQAQACAgICAwABBAIDAAAAAAEAESExQVEQYUBxgZEgMKGxUMFg0fD/2gAIAQEAAT8Q8V/wH5/4M7wJ6cF4fE/P79eBrMguP1ZsH+Y8MsESxCAH/gLAVQIVs7DaKrysdFhleL0w9ZSKlVxCyD816QCI/wAEwWLWoQTkSdXk/Q8xSZJbhw/LajBo5WLE/wCgiltZZMQSvwCD+hBgeGtWk0kUEDx2dnyW/ALWNXjHK19xEqEe0sIaYgMVAw9ZeMK8CVDzBOPIv+oFG9Dp+OxzeZygJBtS1kVEMQQ4/JZogqAwwaMT0kz4JWa8AmkNkZ9P4z44mTgLYq+lV9HiZCrAg34XoI2ViWViOViKgjsjVK7YZiRncASoeB+NVLS0fsNXi7jwlVBBCmi2MxbF78RjyTsxHcXcfFxWIanUvVtD4jGUwArGO2DkYirHCUCHBqUoxNzj1BLgO4yMfUqI5VwlPqWv6+KZf6qzKXxWImxjKPjkgYtiTqECBlkKDEwwJGzNnUoVn0b8Sxih3rLHhaYYbiAKhsN1Kq73DthHHNRD9MC1+Dskle7xC/kWG1y40+mKkHLPiMYKfibUeGYuUgBebjqxWMv6R2Vo+MkSqcy7OWCgvcZuWN2BeAlyNzph9IOQtwtw7qUrWQTBTHuLkhy/CH5/QOXJYVuhDAZf0f0RVdz4vqHkCtXYBE9ZUNz7mNL7/wDZAwiNuVfQhgYMokmf49qagLQd7TYv5iYXLOy/pgh/gRQGt2oFILtbCY8BWC/wQDuOH4jPf8A1UXK7FUUj+v8Akvtj9i1CSgaSWR9i2y4qxEU+2AbZO5Wgg/J7otfssah6CouQ1DmUwu7Ig3EojMF5GMMgbIxHOCJYOGJIUX8NlGOCIxUEqf1EaUBcA5qHxZ1KtEaMygGxeIZ+KmhpZuBQSbl+ARVDKCNrOwCAoABZkt2Vv4ZmX74AquMeFGjMj1P6LqGUSzR/v3HEuNgbjAeQIPBfxa/1mD9oaLo3Cw+/hsUDa1jWiErljElzdhadX6iKQImx/oXumnMrBK9ia3LPI5P1MeXoNPggtIijaaA2xS2saM/FEFbLRj8NgWEwwzNCJgwZI7uHVH/zZimi+yBVCi+IU9yhECbSwdKNFqWl8iMMLHllkstm/X/AYfc/IJA+0gJe7VsR1CW7YVG6EFfY/DZqKFYWv7Lq5G5feERQUWTdSYIYhA7nWYwAqXAIhSFYiA5LJV1grGpqopUpTqNRFI4Iq5l+LahpL9m8Rxqc1TAHZDvXX7AIJaoxhcLgsmGVB78R5Yeo5Ldcxg3EVLjxqI/ZVhimulB4UBhh8VBTS/sSqBExUuruFyMSbjo6hASYQzFW4WLbDUcqFGQjmahiiUsapsNQ9TQl8LSYqZStw0dFQTLahnBgNMyRo+PVp7DTAto4JTPoMN7zcooBSYmbWBZqs49xVDFZx7gXhKovcuW2ypDkJLW42Zg2Lt4YmqPYTP2i/qJ0sGOmi2yhlGAUfHdR0SoNxdTIFYzHCciFhc5/CBBfVsWo5xM2jgLg5zxGo5tM3Qf7ExC3fHc4gttK3fOoSy7gYm1s3bfyGV2yQUEdtDJEQIPNiOdBYnascMRlyBW1bDg6jEbHDQzF0exUDuYuyZdSf4My5YAkNCOaPcfCHtfkpjPbBU5eAmuZcL1c0CoMEx1CY4hzAPqEBgXtEKBTCokAEGopLzWmWvC2ZgcOf2fcgwQV8lhfxwlLDZuBsDyWJQXTqZYIVBdMcB2XLcrZcMAiV4tEIEsvV7iuxpY7YveOIDjg3/EJqGefl4i6CDetLC1vRTUNDQ7V5g0pfFmiUJcDHUFXzOVo3LFO33xBVSlLmMgGHAuoBQPSaRAtcZiy/DDCRoJ6oPwK/tUYBay+IR+EI974iozxArb3Ux4Fm31BoK3UVlhg/wBw6BpEEGTvoj0qLUV2x0lu/QhoaB45GI3o3+3KMd/wIG8ZMt6RtogWz5PohmaJBZK5CNRbPpA/lLv3MIinjUsRwofCgZh100WlAsswPTFRyY+jFBS0uCltSqGKxG0ykYJ7i/jMYf1we4xm1bWfy8UuDMC9CJUvJiEBo7zXJGpV632Sy20xoTVH5Ga6WXsljFk26JeEc+QSpp+7KCzEDVsxS0cwkcxfnHxnArMucMK7ioYwYMr7h5hUb3FFaU7wESmAeUudgNg3DA52mI5bxevUCAKTUqAmJSYEJyajg4roGTU1v4bFAVQCFZcNLRA1I4t7824axMqlpZM3GJiG1cChCKompqZQbwajLYs9vOGo1uGb0sj8BoINq1LX2hiM9061CGglklfO0DwobJVIJkhWXBrCCEQKhTRUF71AfVQe4Zgr7ErmnT4ITJOOnv4ibP7igI9zdZg4mV8RqlVi4ZVPcyoQ58BBOGYYwwFIKS2OtwPBKMECRpD34UL1MfqSiUhHUsI2h2SMZjbj/YOsyGIodsLUHthIpmWXRKPqJd6qMJb9kv4KnhX8Qn1ErXqVxo4lIXUxChC0YhMjEU9Q9wjLyPAg/VKmhBhqb15RDTJcB1hnH2ebliLb0RHjVljK3lYmq9oBUQAYlrNjLn2WPpCAWjx8ovNkgUmJqYGUEopjmIbPB1RDnbONTMbqYwJ62NYPLYThDw58HjUoYpOGzMaZdEIX65uWgOkmegrmIMggBDhi0x4jlHEOEQqEoJxDLmUIWytiGkY6lezzPqNVfEPFBsslPuljURipbnERAK01LWKFhmkHidS8o403KGEN+CJ4SD4YVYvgEJfkQuuO7BEBKE08SwE+qKUEdRVt1Lz1uQ41rlD4Fy9MS3UvgAvbRY0I5GX0jRySrZKlFRmUoCszNR/mUb7mLKUBcuiU9rCPZl5rYcA2rOIf1J5yDLgMrUEalR1BcNcSrn98xtIY1FSXoPcznb5WE1vq2wrmioemF07NrCQDpgziE19mZjfaHplBp/SK1E+ymqj8jj/tYdQB4ZcVEJuzmEWzpDo01GMrMok6fL/T/9k=" alt="S.M. Ramzi Guedouar" />
+    </div>
     <div class="cv-header-info">
-      <h1 data-fr="S.M. RAMZI GUEDOUAR" data-en="S.M. RAMZI GUEDOUAR" data-es="S.M. RAMZI GUEDOUAR" data-pt="S.M. RAMZI GUEDOUAR">S.M. RAMZI GUEDOUAR</h1>
-      <div class="cv-subtitle" data-fr="Fondateur & Développeur IT | Expert Desktop & Mobile" data-en="Founder & IT Developer | Desktop & Mobile Expert" data-es="Fundador y Desarrollador IT | Experto Desktop & Móvil" data-pt="Fundador e Desenvolvedor IT | Especialista Desktop & Mobile">Fondateur & Développeur IT | Expert Desktop & Mobile</div>
+      <h1>S.M. RAMZI GUEDOUAR</h1>
+      <div class="cv-badge">🏛️ Forslog SARL · Agréé Min. Intérieur Type 1 · RC Oran</div>
+      <div class="cv-subtitle"
+        data-fr="Fondateur & Gérant — Forslog SARL | Expert Sécurité Électronique · CCTV · Télécoms · Flutter Dev"
+        data-en="Founder & CEO — Forslog SARL | Electronic Security · CCTV · Telecoms · Flutter Dev Expert"
+        data-es="Fundador y Director — Forslog SARL | Experto Seguridad Electrónica · CCTV · Telecomunicaciones · Flutter"
+        data-pt="Fundador e Diretor — Forslog SARL | Especialista Segurança Eletrónica · CCTV · Telecomunicações · Flutter">
+        Fondateur &amp; Gérant — Forslog SARL | Expert Sécurité Électronique · CCTV · Télécoms · Flutter Dev
+      </div>
       <div class="cv-contacts">
         <span>📧 ramzi.guedouar@gmail.com</span>
         <span>📱 +213 696 410 953</span>
-        <span>📍 Bir El Djir, Oran, Algérie</span>
-        <span>🔗 <a href="https://github.com/Connacri" target="_blank" style="color:#a8c8f0;">github.com/Connacri</a></span>
+        <span>📍 Bir El Djir, Oran 31000 🇩🇿</span>
+        <span>🔗 <a href="https://github.com/Connacri" target="_blank">github.com/Connacri</a></span>
+        <span>💼 <a href="https://linkedin.com/in/ramzi-guedouar" target="_blank">LinkedIn</a></span>
+        <span>🌐 <a href="https://connacri.github.io/CV" target="_blank">connacri.github.io/CV</a></span>
       </div>
     </div>
   </div>
 
-  <!-- BODY -->
   <div class="cv-body">
 
-    <!-- LEFT SIDEBAR -->
+    <!-- ===== LEFT ===== -->
     <div class="cv-left">
 
-      <!-- COMPÉTENCES -->
       <div class="section">
-        <div class="sec-title" data-fr="Compétences" data-en="Skills" data-es="Competencias" data-pt="Competências">Compétences</div>
+        <div class="sec-title"
+          data-fr="Compétences Techniques"
+          data-en="Technical Skills"
+          data-es="Competencias Técnicas"
+          data-pt="Competências Técnicas">Compétences Techniques</div>
 
-        <div class="skill-cat" data-fr="Développement Desktop" data-en="Desktop Development" data-es="Desarrollo Desktop" data-pt="Desenvolvimento Desktop">Développement Desktop</div>
+        <div class="skill-cat"
+          data-fr="🔒 Sécurité & Surveillance"
+          data-en="🔒 Security & Surveillance"
+          data-es="🔒 Seguridad y Vigilancia"
+          data-pt="🔒 Segurança e Vigilância">🔒 Sécurité & Surveillance</div>
         <div class="skill-chips">
-          <span class="chip">Windows Apps</span>
-          <span class="chip">Logiciels Métier</span>
-          <span class="chip">Crystal Reports</span>
+          <span class="chip chip-sec">CCTV IP/HD</span>
+          <span class="chip chip-sec">DVR / NVR</span>
+          <span class="chip chip-sec">PTZ · Dôme · Bullet</span>
+          <span class="chip chip-sec">Vision nocturne IR</span>
+          <span class="chip chip-sec">Contrôle d'accès</span>
+          <span class="chip chip-sec">Serrures hôtelières</span>
+          <span class="chip chip-sec">Cartes RFID</span>
+          <span class="chip chip-sec">Visiophones IP</span>
+          <span class="chip chip-sec">Anti-intrusion</span>
+          <span class="chip chip-sec">Portiques sécurité</span>
+          <span class="chip chip-sec">Détecteurs métaux</span>
         </div>
 
-        <div class="skill-cat" data-fr="Développement Mobile / Flutter" data-en="Mobile / Flutter Development" data-es="Desarrollo Móvil / Flutter" data-pt="Desenvolvimento Móvel / Flutter">Développement Mobile / Flutter</div>
+        <div class="skill-cat"
+          data-fr="📡 Télécommunications"
+          data-en="📡 Telecommunications"
+          data-es="📡 Telecomunicaciones"
+          data-pt="📡 Telecomunicações">📡 Télécommunications</div>
         <div class="skill-chips">
-          <span class="chip">Flutter</span>
-          <span class="chip">Dart</span>
-          <span class="chip">Android</span>
-          <span class="chip">Play Store</span>
+          <span class="chip chip-default">PABX / IPBX</span>
+          <span class="chip chip-default">VOIP / SIP</span>
+          <span class="chip chip-default">Radio VHF/UHF</span>
+          <span class="chip chip-default">GPS Tracking</span>
+          <span class="chip chip-default">WiFi Pro</span>
+          <span class="chip chip-default">Fibre optique</span>
+          <span class="chip chip-default">Câblage structuré</span>
+          <span class="chip chip-default">Réseaux hertziens</span>
         </div>
 
-        <div class="skill-cat" data-fr="Bases de données & Cloud" data-en="Databases & Cloud" data-es="Bases de Datos & Cloud" data-pt="Bases de Dados & Cloud">Bases de données & Cloud</div>
+        <div class="skill-cat"
+          data-fr="🦋 Dev Flutter & Mobile"
+          data-en="🦋 Flutter & Mobile Dev"
+          data-es="🦋 Desarrollo Flutter & Móvil"
+          data-pt="🦋 Desenvolvimento Flutter & Móvel">🦋 Dev Flutter & Mobile</div>
         <div class="skill-chips">
-          <span class="chip">MySQL</span>
-          <span class="chip">Firebase</span>
-          <span class="chip">Supabase</span>
+          <span class="chip chip-green">Flutter / Dart</span>
+          <span class="chip chip-green">Android</span>
+          <span class="chip chip-green">Firebase</span>
+          <span class="chip chip-green">Supabase</span>
+          <span class="chip chip-green">ObjectBox ODM</span>
+          <span class="chip chip-green">Provider</span>
+          <span class="chip chip-green">MySQL</span>
+          <span class="chip chip-green">REST API</span>
+          <span class="chip chip-green">MCP · AI Agents</span>
         </div>
 
-        <div class="skill-cat" data-fr="Réseau & Systèmes" data-en="Network & Systems" data-es="Redes & Sistemas" data-pt="Redes & Sistemas">Réseau & Systèmes</div>
+        <div class="skill-cat"
+          data-fr="🌐 Web & Outils"
+          data-en="🌐 Web & Tools"
+          data-es="🌐 Web y Herramientas"
+          data-pt="🌐 Web e Ferramentas">🌐 Web & Outils</div>
         <div class="skill-chips">
-          <span class="chip">TCP/IP</span>
-          <span class="chip">WiFi</span>
-          <span class="chip">Windows Server</span>
-          <span class="chip">Active Directory</span>
+          <span class="chip chip-purple">HTML / CSS / JS</span>
+          <span class="chip chip-purple">PHP / MySQL</span>
+          <span class="chip chip-purple">Windows Apps</span>
+          <span class="chip chip-purple">Crystal Reports</span>
+          <span class="chip chip-purple">Git / GitHub</span>
         </div>
 
-        <div class="skill-cat" data-fr="Autres" data-en="Other" data-es="Otros" data-pt="Outros">Autres</div>
+        <div class="skill-cat"
+          data-fr="🏢 Gestion & Commerce"
+          data-en="🏢 Management & Business"
+          data-es="🏢 Gestión y Negocios"
+          data-pt="🏢 Gestão e Negócios">🏢 Gestion & Commerce</div>
         <div class="skill-chips">
-          <span class="chip">Git / GitHub</span>
-          <span class="chip">HTML/CSS/JS</span>
-          <span class="chip">Crystal Reports</span>
-          <span class="chip">API REST</span>
+          <span class="chip chip-default">Import / Export</span>
+          <span class="chip chip-default">Gestion de projets</span>
+          <span class="chip chip-default">SAV & Formation</span>
+          <span class="chip chip-default">Trade Marketing</span>
+          <span class="chip chip-default">Rédaction d'offres</span>
         </div>
       </div>
 
-      <!-- LANGUES -->
       <div class="section">
-        <div class="sec-title" data-fr="Langues" data-en="Languages" data-es="Idiomas" data-pt="Idiomas">Langues</div>
+        <div class="sec-title"
+          data-fr="Agrément — Min. Intérieur"
+          data-en="Official Accreditation"
+          data-es="Acreditación Oficial"
+          data-pt="Acreditação Oficial">Agrément — Min. Intérieur</div>
+        <div class="agrement-box">
+          <div class="agrement-box-title">🏛️ Type 1 — Algérie · Avril 2016</div>
+          <div class="agrement-item">Import · Export · Fabrication · Vente · Install · Maintenance</div>
+          <div class="agrement-box-title" style="margin-top:7px">📡 Télécoms</div>
+          <div class="agrement-item">Stations HF/VHF/UHF/SHF · Liaisons satellite</div>
+          <div class="agrement-item">GPS/GSM/GPRS · Communications tous usages</div>
+          <div class="agrement-box-title" style="margin-top:7px">📷 CCTV</div>
+          <div class="agrement-item">Vidéosurveillance IP filaire & sans fil</div>
+          <div class="agrement-item">DVR/NVR · Caméras fixes et mobiles</div>
+          <div class="agrement-box-title" style="margin-top:7px">🔍 Sécurité</div>
+          <div class="agrement-item">Scanners Rx · Détecteurs explosifs/drogues/gaz</div>
+          <div class="agrement-item">Anti-intrusion · Portiques · Alarmes</div>
+          <div style="margin-top:8px;font-size:0.64rem;color:rgba(0,212,255,0.6);font-style:italic">
+            📋 RC : 607019 · 605001 · 607001 · 605021 · 607002
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title"
+          data-fr="Langues"
+          data-en="Languages"
+          data-es="Idiomas"
+          data-pt="Idiomas">Langues</div>
         <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" data-fr="🇫🇷 Français" data-en="🇫🇷 French" data-es="🇫🇷 Francés" data-pt="🇫🇷 Francês">🇫🇷 Français</span>
-            <span class="lang-level" data-fr="Courant" data-en="Fluent" data-es="Fluido" data-pt="Fluente">Courant</span>
+            <span class="lang-name">🇫🇷 Français</span>
+            <span class="lang-level"
+              data-fr="Courant" data-en="Fluent" data-es="Fluido" data-pt="Fluente">Courant</span>
           </div>
           <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:90%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" data-fr="🇬🇧 Anglais" data-en="🇬🇧 English" data-es="🇬🇧 Inglés" data-pt="🇬🇧 Inglês">🇬🇧 Anglais</span>
-            <span class="lang-level" data-fr="Intermédiaire" data-en="Intermediate" data-es="Intermedio" data-pt="Intermédio">Intermédiaire</span>
+            <span class="lang-name">🇬🇧 Anglais</span>
+            <span class="lang-level"
+              data-fr="Intermédiaire" data-en="Intermediate" data-es="Intermedio" data-pt="Intermédio">Intermédiaire</span>
           </div>
-          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:60%"></div></div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:55%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" data-fr="🇪🇸 Espagnol" data-en="🇪🇸 Spanish" data-es="🇪🇸 Español" data-pt="🇪🇸 Espanhol">🇪🇸 Espagnol</span>
-            <span class="lang-level" data-fr="Notions" data-en="Basic" data-es="Nociones" data-pt="Noções">Notions</span>
+            <span class="lang-name">🇪🇸 Espagnol</span>
+            <span class="lang-level"
+              data-fr="Notions" data-en="Basic" data-es="Nociones" data-pt="Noções">Notions</span>
           </div>
           <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:30%"></div></div>
         </div>
         <div class="lang-item">
           <div class="lang-row">
-            <span class="lang-name" data-fr="🇵🇹 Portugais" data-en="🇵🇹 Portuguese" data-es="🇵🇹 Portugués" data-pt="🇵🇹 Português">🇵🇹 Portugais</span>
-            <span class="lang-level" data-fr="Notions" data-en="Basic" data-es="Nociones" data-pt="Noções">Notions</span>
+            <span class="lang-name">🇵🇹 Portugais</span>
+            <span class="lang-level"
+              data-fr="Notions" data-en="Basic" data-es="Nociones" data-pt="Noções">Notions</span>
           </div>
           <div class="lang-bar-bg"><div class="lang-bar-fill" style="width:25%"></div></div>
         </div>
       </div>
 
-      <!-- INFOS PERSONNELLES -->
       <div class="section">
-        <div class="sec-title" data-fr="Informations" data-en="Personal Info" data-es="Información Personal" data-pt="Informações Pessoais">Informations</div>
-        <div class="info-item" data-fr="Né le 20 Mars 1979 — Oran" data-en="Born 20 March 1979 — Oran" data-es="Nacido el 20 Marzo 1979 — Orán" data-pt="Nascido a 20 Março 1979 — Orão">Né le 20 Mars 1979 — Oran</div>
-        <div class="info-item" data-fr="Marié, 2 enfants (2017, 2023)" data-en="Married, 2 children (2017, 2023)" data-es="Casado, 2 hijos (2017, 2023)" data-pt="Casado, 2 filhos (2017, 2023)">Marié, 2 enfants (2017, 2023)</div>
-        <div class="info-item" data-fr="Diplômé Universitaire en Informatique de Gestion" data-en="University Graduate in Business Informatics" data-es="Titulado Universitario en Informática de Gestión" data-pt="Licenciado Universitário em Informática de Gestão">Diplômé Universitaire en Informatique de Gestion</div>
-        <div class="info-item" data-fr="Permis de conduire B" data-en="Driving License Cat. B" data-es="Permiso de conducir B" data-pt="Carta de condução B">Permis de conduire B</div>
+        <div class="sec-title"
+          data-fr="Informations"
+          data-en="Personal Info"
+          data-es="Información Personal"
+          data-pt="Informações Pessoais">Informations</div>
+        <div class="info-item"
+          data-fr="Né le 20 Mars 1979 — Oran, Algérie"
+          data-en="Born 20 March 1979 — Oran, Algeria"
+          data-es="Nacido el 20 Marzo 1979 — Orán, Argelia"
+          data-pt="Nascido a 20 Março 1979 — Orão, Argélia">Né le 20 Mars 1979 — Oran</div>
+        <div class="info-item"
+          data-fr="Marié · 2 enfants (2017, 2023)"
+          data-en="Married · 2 children (2017, 2023)"
+          data-es="Casado · 2 hijos (2017, 2023)"
+          data-pt="Casado · 2 filhos (2017, 2023)">Marié · 2 enfants (2017, 2023)</div>
+        <div class="info-item"
+          data-fr="Diplômé Universitaire — Ingénieur d'Application"
+          data-en="University Graduate — Application Engineer"
+          data-es="Titulado Universitario — Ingeniero de Aplicación"
+          data-pt="Licenciado Universitário — Engenheiro de Aplicação">Diplômé Universitaire — Ingénieur d'Application</div>
+        <div class="info-item"
+          data-fr="Permis de conduire B (2000)"
+          data-en="Driving License B (2000)"
+          data-es="Permiso de conducir B (2000)"
+          data-pt="Carta de condução B (2000)">Permis de conduire B (2000)</div>
+        <div class="info-item"
+          data-fr="Forslog SARL — Capital 5 000 000 DZD"
+          data-en="Forslog SARL — Capital 5,000,000 DZD"
+          data-es="Forslog SARL — Capital 5.000.000 DZD"
+          data-pt="Forslog SARL — Capital 5.000.000 DZD">Forslog SARL — Capital 5 000 000 DZD</div>
       </div>
 
     </div><!-- /cv-left -->
 
-    <!-- RIGHT MAIN -->
+    <!-- ===== RIGHT ===== -->
     <div class="cv-right">
 
-      <!-- PROFIL -->
       <div class="section">
-        <div class="sec-title" data-fr="Profil" data-en="Profile" data-es="Perfil" data-pt="Perfil">Profil</div>
-        <p class="summary-text" data-fr="Entrepreneur IT algérien, fondateur et gérant de ma propre entreprise depuis 2013. Expert en développement d'applications Flutter/Dart cross-platform, applications desktop Windows et mobile Android, avec plusieurs publications sur le Play Store. Diplômé universitaire en Informatique de Gestion, passionné par la résolution de problèmes techniques et le développement de solutions sur mesure." data-en="Algerian IT entrepreneur, founder and manager of my own company since 2013. Expert in cross-platform Flutter/Dart apps, Windows desktop and Android mobile development, with multiple apps published on the Play Store. University graduate in Business Informatics, passionate about solving technical problems and building custom solutions." data-es="Empresario IT argelino, fundador y gerente de mi propia empresa desde 2013. Experto en apps Flutter/Dart multiplataforma, desarrollo desktop Windows y Android, con varias apps publicadas en Play Store. Titulado universitario en Informática de Gestión, apasionado por resolver problemas técnicos y construir soluciones a medida." data-pt="Empresário IT argelino, fundador e gestor da minha própria empresa desde 2013. Especialista em apps Flutter/Dart multiplataforma, desenvolvimento desktop Windows e Android, com várias apps publicadas na Play Store. Licenciado universitário em Informática de Gestão, apaixonado por resolver problemas técnicos e construir soluções à medida.">
-          Entrepreneur IT algérien, fondateur et gérant de ma propre entreprise depuis 2013. Expert en développement d'applications Flutter/Dart cross-platform, applications desktop Windows et mobile Android, avec plusieurs publications sur le Play Store. Diplômé universitaire en Informatique de Gestion, passionné par la résolution de problèmes techniques et le développement de solutions sur mesure.
+        <div class="sec-title"
+          data-fr="Profil Professionnel"
+          data-en="Professional Profile"
+          data-es="Perfil Profesional"
+          data-pt="Perfil Profissional">Profil Professionnel</div>
+        <p class="summary-text"
+          data-fr="Entrepreneur IT algérien, fondateur et gérant de Forslog SARL (Ingénierie Cybernétique et Technologies Avancées) depuis 2013. Agréé par le Ministère de l'Intérieur (Type 1) pour l'importation, l'installation et la maintenance d'équipements de sécurité sensibles : systèmes CCTV, contrôle d'accès, serrures magnétiques hôtelières, standards PABX, visiophones et télécommunications. Développeur expert Flutter/Dart pour applications cross-platform. Clientèle fidèle d'hôtels, d'entreprises et d'institutions publiques."
+          data-en="Algerian IT entrepreneur, founder and CEO of Forslog SARL since 2013. Accredited by the Ministry of Interior (Type 1) for importing, installing and maintaining sensitive security equipment: CCTV systems, access control, hotel magnetic locks, PABX systems and telecommunications. Expert Flutter/Dart developer for cross-platform applications. Loyal client base of hotels, businesses and public institutions."
+          data-es="Empresario IT argelino, fundador y director de Forslog SARL desde 2013. Acreditado por el Ministerio del Interior (Tipo 1) para importar, instalar y mantener equipos de seguridad sensibles: sistemas CCTV, control de acceso, cerraduras magnéticas hoteleras, PABX y telecomunicaciones. Desarrollador experto Flutter/Dart para aplicaciones multiplataforma."
+          data-pt="Empresário IT argelino, fundador e diretor da Forslog SARL desde 2013. Acreditado pelo Ministério do Interior (Tipo 1) para importar, instalar e manter equipamentos de segurança sensíveis: sistemas CCTV, controlo de acessos, fechaduras magnéticas hoteleiras, PABX e telecomunicações. Desenvolvedor especialista Flutter/Dart para aplicações multiplataforma.">
+          Entrepreneur IT algérien, fondateur et gérant de Forslog SARL (Ingénierie Cybernétique et Technologies Avancées) depuis 2013. Agréé par le Ministère de l'Intérieur (Type 1) pour l'importation, l'installation et la maintenance d'équipements de sécurité sensibles : systèmes CCTV, contrôle d'accès, serrures magnétiques hôtelières, standards PABX, visiophones et télécommunications. Développeur expert Flutter/Dart pour applications cross-platform. Clientèle fidèle d'hôtels, d'entreprises et d'institutions publiques.
         </p>
       </div>
 
-      <!-- EXPÉRIENCE -->
       <div class="section">
-        <div class="sec-title" data-fr="Expérience Professionnelle" data-en="Work Experience" data-es="Experiencia Profesional" data-pt="Experiência Profissional">Expérience Professionnelle</div>
+        <div class="sec-title"
+          data-fr="Activités Forslog SARL"
+          data-en="Forslog SARL Core Activities"
+          data-es="Actividades Principales Forslog"
+          data-pt="Atividades Principais Forslog">Activités Forslog SARL</div>
 
-        <!-- JOB 1 : IT Entrepreneur -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Fondateur & Développeur Principal" data-en="Founder & Lead Developer" data-es="Fundador y Desarrollador Principal" data-pt="Fundador e Desenvolvedor Principal">Fondateur & Développeur Principal</div>
-              <div class="job-company">Forslog — Entreprise IT · Oran, Algérie</div>
+              <div class="job-title"
+                data-fr="🔒 Sécurité Électronique & Contrôle d'Accès"
+                data-en="🔒 Electronic Security & Access Control"
+                data-es="🔒 Seguridad Electrónica y Control de Acceso"
+                data-pt="🔒 Segurança Eletrónica e Controlo de Acessos">🔒 Sécurité Électronique & Contrôle d'Accès</div>
             </div>
-            <div class="job-period" data-fr="2013 — Présent" data-en="2013 — Present" data-es="2013 — Presente" data-pt="2013 — Presente">2013 — Présent</div>
           </div>
           <ul>
-            <li data-fr="Développement d'applications Flutter/Dart cross-platform et logiciels Windows sur mesure" data-en="Cross-platform Flutter/Dart apps and custom Windows software development" data-es="Desarrollo de apps Flutter/Dart multiplataforma y software Windows a medida" data-pt="Desenvolvimento de apps Flutter/Dart multiplataforma e software Windows personalizado">Développement d'applications Flutter/Dart cross-platform et logiciels Windows sur mesure</li>
-            <li data-fr="Publication et maintenance d'applications sur le Google Play Store" data-en="Publishing and maintaining apps on Google Play Store" data-es="Publicación y mantenimiento de apps en Google Play Store" data-pt="Publicação e manutenção de apps no Google Play Store">Publication et maintenance d'applications sur le Google Play Store</li>
-            <li data-fr="Installation, configuration et maintenance de réseaux informatiques locaux" data-en="Installation, configuration and maintenance of local computer networks" data-es="Instalación, configuración y mantenimiento de redes informáticas locales" data-pt="Instalação, configuração e manutenção de redes informáticas locais">Installation, configuration et maintenance de réseaux informatiques locaux</li>
-            <li data-fr="Formation et support technique clients" data-en="Technical training and client support" data-es="Formación y soporte técnico para clientes" data-pt="Formação e suporte técnico para clientes">Formation et support technique clients</li>
+            <li data-fr="Fourniture, installation et maintenance CCTV IP/HD (dôme, bullet, PTZ, panoramiques, vision nocturne IR)"
+                data-en="Supply, installation and maintenance CCTV IP/HD (dome, bullet, PTZ, panoramic, IR night vision)"
+                data-es="Suministro, instalación y mantenimiento CCTV IP/HD (domo, bullet, PTZ, panorámicas, visión nocturna IR)"
+                data-pt="Fornecimento, instalação e manutenção CCTV IP/HD (domo, bullet, PTZ, panorâmicas, visão noturna IR)">Fourniture, installation et maintenance CCTV IP/HD (dôme, bullet, PTZ, panoramiques, vision nocturne IR)</li>
+            <li data-fr="Serrures magnétiques hôtelières — encodage cartes RFID, installation, maintenance et SAV (activité principale)"
+                data-en="Hotel magnetic locks — RFID card encoding, installation, maintenance and after-sales (core activity)"
+                data-es="Cerraduras magnéticas hoteleras — codificación RFID, instalación, mantenimiento y postventa (actividad principal)"
+                data-pt="Fechaduras magnéticas hoteleiras — codificação RFID, instalação, manutenção e pós-venda (atividade principal)">Serrures magnétiques hôtelières — encodage cartes RFID, installation, maintenance et SAV</li>
+            <li data-fr="Visiophones, interphones et portiers vidéo IP (résidentiels, copropriétés, hôtels, entreprises)"
+                data-en="Video intercoms and IP video door phones (residential, condos, hotels, businesses)"
+                data-es="Videoporteros e intercomunicadores IP (residencial, comunidades, hoteles, empresas)"
+                data-pt="Videoporteiros e intercomunicadores IP (residencial, condomínios, hotéis, empresas)">Visiophones, interphones et portiers vidéo IP</li>
+            <li data-fr="Systèmes anti-intrusion, portiques de sécurité, détecteurs de métaux et d'explosifs"
+                data-en="Anti-intrusion systems, security portals, metal and explosive detectors"
+                data-es="Sistemas anti-intrusión, portales de seguridad, detectores de metales y explosivos"
+                data-pt="Sistemas anti-intrusão, portais de segurança, detetores de metais e explosivos">Systèmes anti-intrusion, portiques de sécurité, détecteurs de métaux et d'explosifs</li>
+            <li data-fr="Importation, suivi douane, réception, stockage et distribution de matériel de sécurité"
+                data-en="Import, customs tracking, reception, storage and distribution of security equipment"
+                data-es="Importación, seguimiento aduanero, recepción, almacenamiento y distribución de material de seguridad"
+                data-pt="Importação, acompanhamento aduaneiro, receção, armazenamento e distribuição de material de segurança">Importation, suivi douane, réception, stockage et distribution de matériel de sécurité</li>
           </ul>
-          <div class="job-stack">Stack : Flutter · Dart · Firebase · Supabase · MySQL · HTML · CSS · JS · PHP</div>
         </div>
 
-        <!-- JOB 2 : ECRN 2008-2011 -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Spécialiste Programmation Web · CCTV IP · Contrôle d'Accès" data-en="Web Programming · CCTV IP · Access Control Specialist" data-es="Especialista Programación Web · CCTV IP · Control de Acceso" data-pt="Especialista Programação Web · CCTV IP · Controlo de Acessos">Spécialiste Programmation Web · CCTV IP · Contrôle d'Accès</div>
-              <div class="job-company">ECRN — Entreprise Militaire de Construction et Réparation Navale</div>
+              <div class="job-title"
+                data-fr="📡 Télécommunications & Standards"
+                data-en="📡 Telecommunications & Telephone Systems"
+                data-es="📡 Telecomunicaciones y Sistemas Telefónicos"
+                data-pt="📡 Telecomunicações e Sistemas Telefónicos">📡 Télécommunications & Standards</div>
+            </div>
+          </div>
+          <ul>
+            <li>Installation et configuration de standards PABX / IPBX (entreprises, hôtels)</li>
+            <li>Câblage structuré, réseaux LAN/WiFi professionnel, fibre optique</li>
+            <li>Systèmes de géolocalisation et tracking GPS/GPRS (véhicules, flottes)</li>
+            <li>Équipements radio VHF/UHF et liaisons hertziennes</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title"
+                data-fr="💻 Développement Flutter & Solutions Logicielles"
+                data-en="💻 Flutter Development & Software Solutions"
+                data-es="💻 Desarrollo Flutter y Soluciones de Software"
+                data-pt="💻 Desenvolvimento Flutter e Soluções de Software">💻 Développement Flutter & Solutions Logicielles</div>
+            </div>
+          </div>
+          <ul>
+            <li>Applications Flutter/Dart cross-platform publiées sur Google Play Store (1K+ downloads ⭐ 4.5)</li>
+            <li>Solutions métier : POS (caisse), gestion hospitalière, transport, hôtellerie</li>
+            <li>Intégration Firebase · Supabase · ObjectBox ODM · Provider · MCP · AI Agents</li>
+            <li>23 dépôts publics GitHub : <a href="https://github.com/Connacri" target="_blank" style="color:var(--cyan)">github.com/Connacri</a></li>
+          </ul>
+          <div class="job-stack">Stack : Flutter · Dart · Firebase · Supabase · ObjectBox · Provider · MySQL · REST · MCP · Git</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-title"
+          data-fr="Expérience Professionnelle"
+          data-en="Work Experience"
+          data-es="Experiencia Profesional"
+          data-pt="Experiência Profissional">Expérience Professionnelle</div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title" data-fr="Fondateur & Gérant" data-en="Founder & CEO" data-es="Fundador y Director" data-pt="Fundador e Diretor">Fondateur &amp; Gérant</div>
+              <div class="job-company">Forslog SARL — Ingénierie Cybernétique et Technologies Avancées · Oran</div>
+            </div>
+            <div class="job-period" data-fr="Avr. 2013 — Présent" data-en="Apr. 2013 — Present" data-es="Abr. 2013 — Presente" data-pt="Abr. 2013 — Presente">Avr. 2013 — Présent</div>
+          </div>
+          <ul>
+            <li>Sécurité électronique · CCTV · Serrures hôtelières · Visiophones · PABX · Anti-intrusion</li>
+            <li>Import matériel sécurité — suivi douane, stockage, distribution et SAV terrain</li>
+            <li>Portefeuille actif : hôtels, entreprises, résidences, institutions publiques</li>
+            <li>Développement Flutter/Dart cross-platform et logiciels Windows métier</li>
+            <li>Publication et maintenance d'applications sur le Google Play Store</li>
+          </ul>
+          <div class="job-stack">RC : 607019 · 607001 · 605021 · 607002 | Agréé Min. Intérieur Type 1</div>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Spécialiste Web · CCTV IP · Contrôle d'Accès</div>
+              <div class="job-company">ECRN — Entreprise Militaire de Construction et Réparation Navale · Oran</div>
             </div>
             <div class="job-period">2008 — Nov. 2011</div>
           </div>
           <ul>
-            <li data-fr="Développement et maintenance d'applications web internes" data-en="Development and maintenance of internal web applications" data-es="Desarrollo y mantenimiento de aplicaciones web internas" data-pt="Desenvolvimento e manutenção de aplicações web internas">Développement et maintenance d'applications web internes</li>
-            <li data-fr="Installation, configuration et supervision de systèmes de vidéosurveillance CCTV IP" data-en="Installation, configuration and supervision of CCTV IP surveillance systems" data-es="Instalación, configuración y supervisión de sistemas de videovigilancia CCTV IP" data-pt="Instalação, configuração e supervisão de sistemas de videovigilância CCTV IP">Installation, configuration et supervision de systèmes de vidéosurveillance CCTV IP</li>
-            <li data-fr="Mise en place et gestion des systèmes de contrôle d'accès (badges, biométrie, portiques)" data-en="Implementation and management of access control systems (badges, biometrics, gates)" data-es="Implementación y gestión de sistemas de control de acceso (tarjetas, biometría, torniquetes)" data-pt="Implementação e gestão de sistemas de controlo de acessos (cartões, biometria, portões)">Mise en place et gestion des systèmes de contrôle d'accès (badges, biométrie, portiques)</li>
-            <li data-fr="Administration réseau et sécurité des systèmes informatiques du site" data-en="Network administration and IT security of site systems" data-es="Administración de red y seguridad de sistemas informáticos del sitio" data-pt="Administração de rede e segurança dos sistemas informáticos do local">Administration réseau et sécurité des systèmes informatiques du site</li>
+            <li>Développement et maintenance d'applications web internes</li>
+            <li>Installation et supervision de systèmes CCTV IP</li>
+            <li>Mise en place de systèmes de contrôle d'accès (badges, biométrie, portiques)</li>
+            <li>Administration réseau et sécurité des systèmes informatiques</li>
           </ul>
-          <div class="job-stack">Stack : HTML · CSS · PHP · MySQL · CCTV IP · Contrôle d'Accès · Réseau</div>
+          <div class="job-stack">HTML · PHP · MySQL · CCTV IP · Contrôle d'Accès · Réseau</div>
         </div>
 
-        <!-- JOB 3 : GAM -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Cadre Commercial" data-en="Commercial Manager" data-es="Ejecutivo Comercial" data-pt="Quadro Comercial">Cadre Commercial</div>
-              <div class="job-company">Générale Assurance Méditerranéenne — GAM · Oran</div>
+              <div class="job-title">Cadre Commercial</div>
+              <div class="job-company">Générale Assurance Méditerranéenne (GAM) · Oran</div>
             </div>
             <div class="job-period">Sept. 2008 — 2013</div>
           </div>
           <ul>
-            <li data-fr="Prospection & Animation — force de vente sédentaire" data-en="Prospecting & Sales animation — sedentary sales force" data-es="Prospección y animación de ventas sedentarias" data-pt="Prospeção e animação — força de vendas sedentária">Prospection & Animation — force de vente sédentaire</li>
-            <li data-fr="Négociation des contrats PME & Grande Entreprise" data-en="Negotiation of SME & large enterprise contracts" data-es="Negociación de contratos PYME y grandes empresas" data-pt="Negociação de contratos PME e grandes empresas">Négociation des contrats PME & Grande Entreprise</li>
-            <li data-fr="Gestion des sinistres, dossiers & comptabilité" data-en="Claims management, files & accounting" data-es="Gestión de siniestros, expedientes y contabilidad" data-pt="Gestão de sinistros, processos e contabilidade">Gestion des sinistres, dossiers & comptabilité</li>
-            <li data-fr="Production & édition des contrats d'assurance" data-en="Production & issuance of insurance contracts" data-es="Producción y emisión de contratos de seguros" data-pt="Produção e emissão de contratos de seguro">Production & édition des contrats d'assurance</li>
+            <li>Prospection, négociation contrats PME &amp; grande entreprise, gestion sinistres</li>
           </ul>
         </div>
 
-        <!-- JOB 3 : BAT -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Sales & Trade Marketing Representative" data-en="Sales & Trade Marketing Representative" data-es="Representante de Ventas y Trade Marketing" data-pt="Representante de Vendas e Trade Marketing">Sales & Trade Marketing Representative</div>
-              <div class="job-company">British American Tobacco — BAT · Région Ouest</div>
+              <div class="job-title">Sales &amp; Trade Marketing Representative</div>
+              <div class="job-company">British American Tobacco (BAT) · Région Ouest</div>
             </div>
             <div class="job-period">Janv. — Août 2008</div>
           </div>
           <ul>
-            <li data-fr="Prospection & identification de nouveaux clients" data-en="Prospecting & identifying new clients" data-es="Prospección e identificación de nuevos clientes" data-pt="Prospeção e identificação de novos clientes">Prospection & identification de nouveaux clients</li>
-            <li data-fr="Application de la stratégie commerciale et suivi des tendances du marché" data-en="Implementing commercial strategy and tracking market trends" data-es="Aplicación de estrategia comercial y seguimiento de tendencias del mercado" data-pt="Aplicação da estratégia comercial e acompanhamento das tendências de mercado">Application de la stratégie commerciale et suivi des tendances du marché</li>
-            <li data-fr="Développement et gestion du portefeuille clients — Zone Ouest (Oran, Sidi Bel-Abbès, Saïda, Mostaganem, Relizane, Chlef, Témouchent, Tlemcen)" data-en="Client portfolio management — West Region (Oran, Sidi Bel-Abbès, Saïda, Mostaganem, Relizane, Chlef, Témouchent, Tlemcen)" data-es="Gestión de cartera de clientes — Zona Oeste (Orán, Sidi Bel-Abbès, Saïda, Mostaganem, Relizane, Chlef, Témouchent, Tlemcen)" data-pt="Gestão de carteira de clientes — Zona Oeste (Orão, Sidi Bel-Abbès, Saïda, Mostaganem, Relizane, Chlef, Témouchent, Tlemcen)">Développement et gestion du portefeuille clients — Zone Ouest (Oran, Sidi Bel-Abbès, Saïda, Mostaganem, Relizane, Chlef, Témouchent, Tlemcen)</li>
-            <li data-fr="Gestion quotidienne de la distribution et vente (Sales & Distribution)" data-en="Daily management of distribution and sales" data-es="Gestión diaria de distribución y ventas" data-pt="Gestão diária de distribuição e vendas">Gestion quotidienne de la distribution et vente (Sales & Distribution)</li>
+            <li>Zone Ouest : Oran, Sidi Bel-Abbès, Tlemcen, Mostaganem, Relizane, Chlef, Saïda, Témouchent</li>
           </ul>
         </div>
 
-        <!-- JOB 6 : ECRN stage 2007 -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Stagiaire — Gestion Personnel & Carrière (GRH)" data-en="Intern — Personnel & Career Management (HRM)" data-es="Becario — Gestión de Personal y Carrera (RRHH)" data-pt="Estagiário — Gestão de Pessoal e Carreira (GRH)">Stagiaire — Gestion Personnel & Carrière (GRH)</div>
-              <div class="job-company">ECRN — Entreprise Militaire de Construction et Réparation Navale</div>
-            </div>
-            <div class="job-period">Avr. — Nov. 2007</div>
-          </div>
-          <ul>
-            <li data-fr="Gestion du personnel et suivi des carrières (GRH)" data-en="Personnel management and career tracking (HRM)" data-es="Gestión de personal y seguimiento de carreras (RRHH)" data-pt="Gestão de pessoal e acompanhamento de carreiras (GRH)">Gestion du personnel et suivi des carrières (GRH)</li>
-          </ul>
-        </div>
-
-        <!-- JOB 5 : Group Five -->
-        <div class="job">
-          <div class="job-top">
-            <div>
-              <div class="job-title" data-fr="Superviseur / Data-Processor" data-en="Supervisor / Data-Processor" data-es="Supervisor / Procesador de Datos" data-pt="Supervisor / Processador de Dados">Superviseur / Data-Processor</div>
-              <div class="job-company">Group Five International Algérie — Hôpital Militaire Aïn El Baïda</div>
+              <div class="job-title">Superviseur / Data-Processor</div>
+              <div class="job-company">Group Five International — Hôpital Militaire Aïn El Baïda</div>
             </div>
             <div class="job-period">Juin 2004 — Nov. 2006</div>
           </div>
-          <ul>
-            <li data-fr="Gestionnaire et traitement des données" data-en="Data management and processing" data-es="Gestión y procesamiento de datos" data-pt="Gestão e processamento de dados">Gestionnaire et traitement des données</li>
-            <li data-fr="Gestion des employeurs et personnels" data-en="Employer and personnel management" data-es="Gestión de empleadores y personal" data-pt="Gestão de empregadores e pessoal">Gestion des employeurs et personnels</li>
-          </ul>
+          <ul><li>Gestion des données et des personnels · Traitement informatique</li></ul>
         </div>
 
-        <!-- JOB 6 : Eternel Soft -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Responsable Service Technique & Commercial" data-en="Technical & Commercial Service Manager" data-es="Responsable de Servicio Técnico y Comercial" data-pt="Responsável Serviço Técnico e Comercial">Responsable Service Technique & Commercial</div>
+              <div class="job-title">Responsable Service Technique &amp; Commercial</div>
               <div class="job-company">Entreprise Eternel Soft · Oran</div>
             </div>
             <div class="job-period">Janv. 2001 — Avr. 2004</div>
           </div>
-          <ul>
-            <li data-fr="Gestion logistique et maintenance informatique" data-en="Logistics and IT maintenance management" data-es="Gestión logística y mantenimiento informático" data-pt="Gestão logística e manutenção informática">Gestion logistique et maintenance informatique</li>
-            <li data-fr="Configuration de systèmes et réseaux" data-en="Systems and network configuration" data-es="Configuración de sistemas y redes" data-pt="Configuração de sistemas e redes">Configuration de systèmes et réseaux</li>
-            <li data-fr="Vente & marketing de solutions informatiques" data-en="Sales & marketing of IT solutions" data-es="Venta y marketing de soluciones informáticas" data-pt="Venda e marketing de soluções informáticas">Vente & marketing de solutions informatiques</li>
-          </ul>
+          <ul><li>Maintenance IT, configuration réseaux, vente &amp; marketing solutions informatiques</li></ul>
         </div>
 
-        <!-- JOB 7 : El WIAM (partiel) -->
         <div class="job">
           <div class="job-top">
             <div>
-              <div class="job-title" data-fr="Secrétaire Général & Directeur Technique (Temps Partiel)" data-en="General Secretary & Technical Director (Part-Time)" data-es="Secretario General y Director Técnico (Tiempo Parcial)" data-pt="Secretário-Geral e Diretor Técnico (Tempo Parcial)">Secrétaire Général & Directeur Technique</div>
-              <div class="job-company">Association Sportive "El WIAM" — (À Temps Partiel)</div>
+              <div class="job-title">Stagiaire GRH</div>
+              <div class="job-company">ECRN — Entreprise Militaire de Construction et Réparation Navale</div>
             </div>
-            <div class="job-period">Sept. 1999 — Juin 2006</div>
+            <div class="job-period">Avr. — Nov. 2007</div>
+          </div>
+          <ul><li>Gestion du personnel et suivi des carrières (GRH)</li></ul>
+        </div>
+
+        <div class="job">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Secrétaire Général &amp; Directeur Technique</div>
+              <div class="job-company">Association Sportive "El WIAM" — (Temps Partiel)</div>
+            </div>
+            <div class="job-period">1999 — 2006</div>
           </div>
           <ul>
-            <li data-fr="Organisation & gestion administrative et financière" data-en="Administrative and financial organization & management" data-es="Organización y gestión administrativa y financiera" data-pt="Organização e gestão administrativa e financeira">Organisation & gestion administrative et financière</li>
-            <li data-fr="Entraîneur d'équipe d'élite · Staff Technique" data-en="Elite team coach · Technical staff" data-es="Entrenador de equipo de élite · Personal técnico" data-pt="Treinador de equipa de elite · Staff técnico">Entraîneur d'équipe d'élite · Staff Technique</li>
+            <li>Organisation &amp; gestion administrative et financière</li>
+            <li>Entraîneur d'équipe d'élite · Staff technique</li>
           </ul>
         </div>
-
       </div>
 
-      <!-- PROJETS NOTABLES -->
       <div class="section">
-        <div class="sec-title" data-fr="Projets & Apps Play Store" data-en="Projects & Play Store Apps" data-es="Proyectos & Apps Play Store" data-pt="Projetos & Apps Play Store">Projets & Apps Play Store</div>
+        <div class="sec-title"
+          data-fr="Projets & Applications Play Store"
+          data-en="Projects & Play Store Apps"
+          data-es="Proyectos & Apps Play Store"
+          data-pt="Projetos & Apps Play Store">Projets &amp; Applications Play Store</div>
 
         <div class="project">
-          <div class="project-title">🗺️ <a href="https://play.google.com/store/apps/details?id=com.oran.dz" target="_blank" style="color:#1a3a5c;" data-fr="Oran : Tourisme & Immobiliers — Play Store ⭐ 4.5" data-en="Oran: Tourism & Real Estate — Play Store ⭐ 4.5" data-es="Orán: Turismo & Inmobiliaria — Play Store ⭐ 4.5" data-pt="Orão: Turismo & Imóveis — Play Store ⭐ 4.5">Oran : Tourisme & Immobiliers — Play Store ⭐ 4.5</a></div>
-          <div class="project-desc" data-fr="Application Flutter — Guides touristiques, hôtels, restaurants, annonces immobilières. 1 000+ téléchargements · 22 avis · Catégorie Voyage & Local." data-en="Flutter app — Tourist guides, hotels, restaurants, real estate listings. 1,000+ downloads · 22 reviews · Travel & Local category." data-es="App Flutter — Guías turísticas, hoteles, restaurantes, anuncios inmobiliarios. 1.000+ descargas · 22 reseñas · Categoría Viajes & Local." data-pt="App Flutter — Guias turísticos, hotéis, restaurantes, anúncios imobiliários. 1.000+ downloads · 22 avaliações · Categoria Viagens & Local.">Application Flutter — Guides touristiques, hôtels, restaurants, annonces immobilières. 1 000+ téléchargements · 22 avis · Catégorie Voyage & Local.</div>
+          <div class="project-title">🗺️ <a href="https://play.google.com/store/apps/details?id=com.oran.dz" target="_blank">Oran : Tourisme &amp; Immobiliers — Play Store ⭐ 4.5</a></div>
+          <div class="project-desc">Flutter — Guides touristiques, hôtels, restaurants, annonces immobilières. 1 000+ téléchargements · 22 avis · Voyage &amp; Local.</div>
         </div>
 
         <div class="project">
-          <div class="project-title">🛡️ <a href="https://play.google.com/store/apps/details?id=com.check31.dz.check31" target="_blank" style="color:#1a3a5c;" data-fr="Check-it — Détection de numéros frauduleux · Play Store 2025" data-en="Check-it — Fraudulent Number Detection · Play Store 2025" data-es="Check-it — Detección de números fraudulentos · Play Store 2025" data-pt="Check-it — Deteção de números fraudulentos · Play Store 2025">Check-it — Détection de numéros frauduleux · Play Store 2025</a></div>
-          <div class="project-desc" data-fr="Application Flutter/Firebase — Vérification & signalement collaboratif de clients frauduleux pour livreurs et commerçants. Base de données temps réel, mode hors-ligne. Mis à jour juin 2025." data-en="Flutter/Firebase app — Collaborative verification & reporting of fraudulent customers for delivery workers and merchants. Real-time database, offline mode. Updated June 2025." data-es="App Flutter/Firebase — Verificación y reporte colaborativo de clientes fraudulentos para repartidores y comerciantes. BD tiempo real, modo sin conexión. Actualizado junio 2025." data-pt="App Flutter/Firebase — Verificação e denúncia colaborativa de clientes fraudulentos para estafetas e comerciantes. BD tempo real, modo offline. Atualizado junho 2025.">Application Flutter/Firebase — Vérification & signalement collaboratif de clients frauduleux pour livreurs et commerçants. Base de données temps réel, mode hors-ligne. Mis à jour juin 2025.</div>
+          <div class="project-title">🛡️ <a href="https://play.google.com/store/apps/details?id=com.check31.dz.check31" target="_blank">Check-it — Détection numéros frauduleux · Play Store 2025</a></div>
+          <div class="project-desc">Flutter/Firebase — Vérification &amp; signalement collaboratif de clients frauduleux pour livreurs et commerçants. Temps réel · Mode hors-ligne.</div>
         </div>
 
         <div class="project">
-          <div class="project-title" data-fr="🛒 POS — Point of Sale (Caisse enregistreuse)" data-en="🛒 POS — Point of Sale" data-es="🛒 POS — Punto de Venta (Caja registradora)" data-pt="🛒 POS — Ponto de Venda (Caixa registradora)">🛒 POS — Point of Sale (Caisse enregistreuse)</div>
-          <div class="project-desc" data-fr="Application Flutter de gestion commerciale complète — ventes, stocks, clients, rapports. Disponible sur GitHub." data-en="Full Flutter commercial management app — sales, inventory, customers, reports. Available on GitHub." data-es="App Flutter completa de gestión comercial — ventas, stock, clientes, informes. Disponible en GitHub." data-pt="App Flutter completa de gestão comercial — vendas, stock, clientes, relatórios. Disponível no GitHub.">Application Flutter de gestion commerciale complète — ventes, stocks, clients, rapports. Disponible sur GitHub.</div>
+          <div class="project-title">🛒 POS — Point of Sale (Caisse enregistreuse Flutter)</div>
+          <div class="project-desc">Gestion commerciale complète — ventes, stocks, clients, rapports. ⭐⭐ GitHub.</div>
         </div>
 
         <div class="project">
-          <div class="project-title" data-fr="🏥 Hospital Inventory & Rheumatology — Santé" data-en="🏥 Hospital Inventory & Rheumatology — Healthcare" data-es="🏥 Hospital Inventory & Rheumatology — Salud" data-pt="🏥 Hospital Inventory & Rheumatology — Saúde">🏥 Hospital Inventory & Rheumatology — Santé</div>
-          <div class="project-desc" data-fr="Suite d'applications Flutter pour la gestion hospitalière : inventaire médical, spécialité rhumatologie, planification." data-en="Flutter app suite for hospital management: medical inventory, rheumatology specialty, planning." data-es="Suite de apps Flutter para gestión hospitalaria: inventario médico, reumatología, planificación." data-pt="Suite de apps Flutter para gestão hospitalar: inventário médico, reumatologia, planeamento.">Suite d'applications Flutter pour la gestion hospitalière : inventaire médical, spécialité rhumatologie, planification.</div>
+          <div class="project-title">🏥 Hospital Inventory &amp; Rheumatology</div>
+          <div class="project-desc">Suite Flutter pour gestion hospitalière : inventaire médical, rhumatologie, planification des ressources.</div>
         </div>
 
         <div class="project">
-          <div class="project-title" data-fr="📶 WiFiCrack — Décodeur de mots de passe WiFi" data-en="📶 WiFiCrack — WiFi Password Decoder" data-es="📶 WiFiCrack — Decodificador de contraseñas WiFi" data-pt="📶 WiFiCrack — Descodificador de senhas WiFi">📶 WiFiCrack — Décodeur de mots de passe WiFi</div>
-          <div class="project-desc" data-fr="Application Flutter de décodage par substitution de chiffres — validée sur réseaux réels." data-en="Flutter decoding app using digit substitution cipher — validated on real networks." data-es="App Flutter de decodificación por sustitución de dígitos — validada en redes reales." data-pt="App Flutter de descodificação por substituição de dígitos — validada em redes reais.">Application Flutter de décodage par substitution de chiffres — validée sur réseaux réels.</div>
-        </div>
-
-        <div class="project">
-          <div class="project-title">🔗 <a href="https://github.com/Connacri" target="_blank" style="color:#1a3a5c;">github.com/Connacri</a> — <span data-fr="23 dépôts publics" data-en="23 public repositories" data-es="23 repositorios públicos" data-pt="23 repositórios públicos">23 dépôts publics</span></div>
-          <div class="project-desc" data-fr="Transport · Profilum (Dating) · SkillGrowth · CRECHE · MultiProjects · Dubai · Indra et plus encore." data-en="Transport · Profilum (Dating) · SkillGrowth · CRECHE · MultiProjects · Dubai · Indra and more." data-es="Transport · Profilum (Dating) · SkillGrowth · CRECHE · MultiProjects · Dubai · Indra y más." data-pt="Transport · Profilum (Dating) · SkillGrowth · CRECHE · MultiProjects · Dubai · Indra e mais.">Transport · Profilum (Dating) · SkillGrowth · CRECHE · MultiProjects · Dubai · Indra et plus encore.</div>
+          <div class="project-title">🔗 <a href="https://github.com/Connacri" target="_blank">github.com/Connacri</a> — 23 dépôts publics</div>
+          <div class="project-desc">Transport · Profilum · SkillGrowth · CRECHE · MultiProjects · Dubai · wifiCrack · Check-it · Indra · et plus.</div>
         </div>
       </div>
 
-      <!-- FORMATION -->
       <div class="section">
-        <div class="sec-title" data-fr="Formation & Certifications" data-en="Education & Certifications" data-es="Formación y Certificaciones" data-pt="Formação e Certificações">Formation & Certifications</div>
+        <div class="sec-title"
+          data-fr="Formation & Certifications"
+          data-en="Education & Certifications"
+          data-es="Formación y Certificaciones"
+          data-pt="Formação e Certificações">Formation &amp; Certifications</div>
 
-        <div class="job" style="margin-bottom:14px;">
-          <div class="edu-degree" data-fr="Diplômé Universitaire — Ingénieur d'Application en Informatique de Gestion" data-en="University Graduate — Application Engineer in Business Informatics" data-es="Titulado Universitario — Ingeniero de Aplicación en Informática de Gestión" data-pt="Licenciado Universitário — Engenheiro de Aplicação em Informática de Gestão">Diplômé Universitaire — Ingénieur d'Application en Informatique de Gestion</div>
-          <div class="edu-school">Université d'Oran IGMO — Organisation, GRH, Système d'Information</div>
+        <div class="job" style="margin-bottom:12px">
+          <div class="edu-degree"
+            data-fr="Diplômé Universitaire — Ingénieur d'Application en Informatique de Gestion"
+            data-en="University Graduate — Application Engineer in Business Informatics"
+            data-es="Titulado Universitario — Ingeniero de Aplicación en Informática de Gestión"
+            data-pt="Licenciado Universitário — Engenheiro de Aplicação em Informática de Gestão">Diplômé Universitaire — Ingénieur d'Application en Informatique de Gestion</div>
+          <div class="edu-school">Université d'Oran IGMO — Organisation · GRH · Système d'Information</div>
         </div>
-
-        <div class="job" style="margin-bottom:14px;">
-          <div class="edu-degree" data-fr="Certificat TM&D — Trade Marketing & Distribution" data-en="TM&D Certificate — Trade Marketing & Distribution" data-es="Certificado TM&D — Trade Marketing y Distribución" data-pt="Certificado TM&D — Trade Marketing e Distribuição">Certificat TM&D — Trade Marketing & Distribution</div>
-          <div class="edu-school">DSI Direct Sales Institute — MXS · Merchandising · Trade Marketing · Distribution</div>
+        <div class="job" style="margin-bottom:12px">
+          <div class="edu-degree">Certificat TM&amp;D — Trade Marketing &amp; Distribution</div>
+          <div class="edu-school">DSI Direct Sales Institute — MXS · Merchandising · Trade Marketing</div>
         </div>
-
-        <div class="job" style="margin-bottom:14px;">
-          <div class="edu-degree" data-fr="Certificat Communication & Négociation" data-en="Communication & Negotiation Certificate" data-es="Certificado Comunicación y Negociación" data-pt="Certificado Comunicação e Negociação">Certificat Communication & Négociation</div>
-          <div class="edu-school">Générale Assurance Méditerranéenne (GAM) — PNL · Prospection · Force de Vente</div>
+        <div class="job" style="margin-bottom:12px">
+          <div class="edu-degree">Certificat Communication &amp; Négociation (PNL)</div>
+          <div class="edu-school">Générale Assurance Méditerranéenne (GAM)</div>
         </div>
-
-        <div class="job" style="margin-bottom:0;">
-          <div class="edu-degree" data-fr="Baccalauréat Science Naturelle & Vie" data-en="Baccalaureate — Natural Science & Life" data-es="Bachillerato Ciencias Naturales y de la Vida" data-pt="Bacharelato Ciências Naturais e da Vida">Baccalauréat Science Naturelle & Vie</div>
-          <div class="edu-school" data-fr="Algérie — Tronc Commun Sciences Exactes & Informatique" data-en="Algeria — Common Core Exact Sciences & IT" data-es="Argelia — Tronco Común Ciencias Exactas e Informática" data-pt="Argélia — Tronco Comum Ciências Exatas e Informática">Algérie — Tronc Commun Sciences Exactes & Informatique</div>
+        <div class="job" style="margin-bottom:0">
+          <div class="edu-degree">Baccalauréat Science Naturelle &amp; Vie</div>
+          <div class="edu-school">Algérie — Tronc Commun Sciences Exactes &amp; Informatique</div>
         </div>
       </div>
-
 
     </div><!-- /cv-right -->
-  </div><!-- /cv-body -->
-
-  <div class="cv-footer">
-    <span data-fr="CV généré avec ❤️ — S.M. Ramzi Guedouar © 2025" data-en="CV generated with ❤️ — S.M. Ramzi Guedouar © 2025" data-es="CV generado con ❤️ — S.M. Ramzi Guedouar © 2025" data-pt="CV gerado com ❤️ — S.M. Ramzi Guedouar © 2025">CV généré avec ❤️ — S.M. Ramzi Guedouar © 2025</span>
   </div>
 
-</div><!-- /page-wrap -->
+  <div class="cv-footer">
+    <span>⚡ Forslog SARL</span> — Ingénierie Cybernétique &amp; Technologies Avancées ·
+    <span>S.M. Ramzi Guedouar</span> © 2025 · Agréé Ministère de l'Intérieur Type 1 ·
+    <span>Oran, Algérie 🇩🇿</span>
+  </div>
+</div>
 
 <script>
 function setLang(lang) {
@@ -580,9 +854,9 @@ function setLang(lang) {
     el.textContent = el.getAttribute('data-' + lang);
   });
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('btn-' + lang).classList.add('active');
+  const btn = document.getElementById('btn-' + lang);
+  if (btn) btn.classList.add('active');
   document.body.style.direction = 'ltr';
-  document.querySelector('.lang-bar span').textContent = '🌐 Langue / Language / Idioma :';
 }
 </script>
 </body>
