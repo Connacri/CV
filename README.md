@@ -20,7 +20,7 @@
 [![Agréé](https://img.shields.io/badge/🏛_Agréé-Ministère_Intérieur_Type_1-f97316?style=flat-square&labelColor=0d1f3c)](https://connacri.github.io/CV)
 [![Email](https://img.shields.io/badge/📧_Email-ramzi.guedouar%40gmail.com-00d4ff?style=flat-square&labelColor=0d1f3c)](mailto:ramzi.guedouar@gmail.com)
 [![WhatsApp](https://img.shields.io/badge/📱_%2B213_696_410_953-25D366?style=flat-square&logo=whatsapp&logoColor=white&labelColor=0d1f3c)](tel:+213696410953)
-[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-S.M._Ramzi_Guedouar-0077B5?style=flat-square&logo=linkedin&logoColor=white&labelColor=0d1f3c)](https://linkedin.com/in/ramzi-guedouar)
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-S.M._Ramzi_Guedouar-0077B5?style=flat-square&logo=linkedin&logoColor=white&labelColor=0d1f3c)](https://www.linkedin.com/in/s-m-ramzi-guedouar-6694043b0/)
 [![CV Live](https://img.shields.io/badge/🌐_CV_Interactif-Voir_en_ligne-a855f7?style=flat-square&labelColor=0d1f3c)](https://connacri.github.io/CV)
 
 </div>
@@ -250,7 +250,8 @@
 | 📧 **Email** | [ramzi.guedouar@gmail.com](mailto:ramzi.guedouar@gmail.com) |
 | 📱 **Tél / WhatsApp** | [+213 696 410 953](tel:+213696410953) |
 | 💻 **GitHub** | [github.com/Connacri](https://github.com/Connacri) |
-| 💼 **LinkedIn** | [linkedin.com/in/ramzi-guedouar](https://linkedin.com/in/ramzi-guedouar) |
+| 💼 **LinkedIn** | [linkedin.com/in/s-m-ramzi-guedouar-6694043b0](https://www.linkedin.com/in/s-m-ramzi-guedouar-6694043b0/) |
+| 🔎 **Indeed** | [Forslog SARL sur Indeed](https://dz.indeed.com/cmp/Forslog) |
 | 🌐 **CV Interactif** | [connacri.github.io/CV](https://connacri.github.io/CV) |
 | 🏪 **Play Store** | [Profil Forslog](https://play.google.com/store/apps/dev?id=7216766428891438814) |
 
